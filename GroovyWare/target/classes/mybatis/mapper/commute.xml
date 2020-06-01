@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="commute">
+
+
+ 
+<!-- 전체 출퇴근 시간설정정보를 선별하는 요소 -->
+<select id="getList" resultType="mybatis.vo.CommuteVO" parameterType="String"> SELECT * FROM commute_t WHERE e_code = #{e_code}</select>
+
+
+<!-- 출근버튼 클릭시 등록 -->
+<insert id="addGo_work" parameterType="java.util.Map">
+		INSERT INTO commute_t(commute_idx,e_code,go_time,go_ip,person_comm_idx)
+		VALUES(commute_seq.NEXTVAL,#{e_code},sysdate,#{go_ip},#{person_comm_idx})
+</insert>
+
+<!-- 퇴근버튼 클릭시 수정 -->
+<update id="addLeave_work" parameterType="java.util.Map">
+		UPDATE commute_t SET leave_time = sysdate, leave_ip = #{leave_ip}
+		WHERE commute_idx = #{commute_idx}
+</update>
+
+<update id="editMemo" parameterType="java.util.Map">
+		UPDATE commute_t SET commute_memo = #{commute_memo}
+		WHERE commute_idx = #{commute_idx}
+</update>
+</mapper>
+
+
+
+
+

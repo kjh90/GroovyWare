@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="main">
+	
+	<resultMap type="mybatis.vo.DraftVO" id="mainMap">
+		<association property="evo" javaType="mybatis.vo.EmpVO" select="empDraft" column="e_code" />
+		<association property="avo" javaType="mybatis.vo.ApprovalVO" select="approval" column="draft_code" />
+	</resultMap>
+	
+	<select id="empDraft" parameterType="String" resultType="mybatis.vo.EmpVO">
+		select * from emp_t
+		where e_code = #{e_code}
+	</select>
+	
+	<select id="approval" parameterType="String" resultType="mybatis.vo.ApprovalVO">
+		select * from approval_t
+		where draft_code = #{draft_code}
+	</select>
+	
+	<!-- 부서검색 -->
+	<select id="selectDraft" parameterType="java.util.Map" resultMap="mainMap">
+		select * from drafting_paper_t
+		where draft_status = '0'
+		<if test="deptSearch != null">
+			and dept_name like '%'||#{deptSearch}||'%'
+		</if>
+		<if test="draft_write_year != null">
+			and draft_year <![CDATA[ <= ]]> #{draft_write_year}
+		</if>
+	</select>
+	
+	<!-- 전자결재 총게시물 수 -->
+	<select id="draftTotalCount" resultType="int">
+		select count(*) from drafting_paper_t
+		where draft_status = '0'
+	</select>
+	
+	<!-- 전자결재 수신함 게시물 수 -->
+	<select id="draftReceiveCount" parameterType="String" resultType="int">
+		select count(*) from approval_t
+		where approval_kinds = '0' and e_code = #{e_code}
+	</select>
+	
+	<!-- 전자결재 수신함 게시물 수 -->
+	<select id="draftReturnCount" parameterType="String" resultType="int">
+		select count(*) from approval_t
+		where approval_kinds = '2' and e_code = #{e_code}
+	</select>
+	
+	<!-- 공지사항 리스트 -->
+	<resultMap type="mybatis.vo.NoticeVO" id="noticeMap">
+		<association property="evo" javaType="mybatis.vo.EmpVO" select="getEmp" column="e_code" />
+	</resultMap>
+	
+	<select id="getEmp" parameterType="String" resultType="mybatis.vo.EmpVO">
+		select * from emp_t
+		where e_code = #{e_code}
+	</select>
+
+	<select id="mainNoticeList" resultMap="noticeMap">
+		select *
+		from ntcbbs_t
+		where ntc_status = '0'
+		order by ntc_idx desc
+	</select>
+	<!-- //공지사항 리스트 -->
+	
+	<!-- index달력 day 스케줄 -->
+	<resultMap type="mybatis.vo.ScheduleVO" id="dayMap">
+		<association property="evo" javaType="mybatis.vo.EmpVO" select="dayEmp" column="e_code" />
+	</resultMap>
+	
+	<select id="dayEmp" parameterType="String" resultType="mybatis.vo.EmpVO">
+		select * from emp_t
+		where e_code = #{e_code}
+	</select>
+	
+	<select id="daySchedule" parameterType="String" resultMap="dayMap">
+		select * from schedule_t
+		where cal_end <![CDATA[ > ]]> #{today}
+	</select>
+	
+	
+</mapper>

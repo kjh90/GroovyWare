@@ -1,0 +1,354 @@
+.RadTabStrip {
+	margin: 0px; padding: 0px;
+}
+.RadTabStripVertical {
+	margin: 0px; padding: 0px;
+}
+.RadTabStrip::after {
+	height: 0px; clear: both; display: block; content: "";
+}
+.RadTabStripVertical::after {
+	height: 0px; clear: both; display: block; content: "";
+}
+.RadTabStrip .rtsLevel {
+	overflow: hidden;
+}
+.RadTabStripVertical .rtsLevel {
+	overflow: hidden;
+}
+.RadTabStrip .rtsLevel::after {
+	height: 0px; clear: both; display: block; content: "";
+}
+.RadTabStripVertical .rtsLevel::after {
+	height: 0px; clear: both; display: block; content: "";
+}
+.RadTabStrip .rtsScroll {
+	overflow: hidden;
+}
+.RadTabStripVertical .rtsScroll {
+	overflow: hidden;
+}
+.RadTabStrip .rtsScroll::after {
+	height: 0px; clear: both; display: block; content: "";
+}
+.RadTabStripVertical .rtsScroll::after {
+	height: 0px; clear: both; display: block; content: "";
+}
+.RadTabStrip .rtsPrevArrow {
+	margin: 5px 0px 0px; outline: 0px; width: 18px; height: 18px; line-height: 18px; text-indent: -9999px; overflow: hidden; font-size: 0px; display: block; background-repeat: no-repeat; background-color: transparent;
+}
+.RadTabStrip .rtsNextArrow {
+	margin: 5px 0px 0px; outline: 0px; width: 18px; height: 18px; line-height: 18px; text-indent: -9999px; overflow: hidden; font-size: 0px; display: block; background-repeat: no-repeat; background-color: transparent;
+}
+.RadTabStrip .rtsPrevArrowDisabled {
+	margin: 5px 0px 0px; outline: 0px; width: 18px; height: 18px; line-height: 18px; text-indent: -9999px; overflow: hidden; font-size: 0px; display: block; background-repeat: no-repeat; background-color: transparent;
+}
+.RadTabStrip .rtsNextArrowDisabled {
+	margin: 5px 0px 0px; outline: 0px; width: 18px; height: 18px; line-height: 18px; text-indent: -9999px; overflow: hidden; font-size: 0px; display: block; background-repeat: no-repeat; background-color: transparent;
+}
+.RadTabStripVertical .rtsPrevArrow {
+	margin: 5px 0px 0px; outline: 0px; width: 18px; height: 18px; line-height: 18px; text-indent: -9999px; overflow: hidden; font-size: 0px; display: block; background-repeat: no-repeat; background-color: transparent;
+}
+.RadTabStripVertical .rtsNextArrow {
+	margin: 5px 0px 0px; outline: 0px; width: 18px; height: 18px; line-height: 18px; text-indent: -9999px; overflow: hidden; font-size: 0px; display: block; background-repeat: no-repeat; background-color: transparent;
+}
+.RadTabStripVertical .rtsPrevArrowDisabled {
+	margin: 5px 0px 0px; outline: 0px; width: 18px; height: 18px; line-height: 18px; text-indent: -9999px; overflow: hidden; font-size: 0px; display: block; background-repeat: no-repeat; background-color: transparent;
+}
+.RadTabStripVertical .rtsNextArrowDisabled {
+	margin: 5px 0px 0px; outline: 0px; width: 18px; height: 18px; line-height: 18px; text-indent: -9999px; overflow: hidden; font-size: 0px; display: block; background-repeat: no-repeat; background-color: transparent;
+}
+.RadTabStrip .rtsUL {
+	list-style: none; margin: 0px; padding: 0px; overflow: hidden; float: left; display: inline;
+}
+.RadTabStripVertical .rtsUL {
+	list-style: none; margin: 0px; padding: 0px; overflow: hidden; float: left; display: inline;
+}
+.RadTabStrip .rtsUL::after {
+	height: 0px; clear: both; display: block; content: "";
+}
+.RadTabStripVertical .rtsUL::after {
+	height: 0px; clear: both; display: block; content: "";
+}
+.RadTabStrip .rtsLI {
+	list-style: none; margin: 0px; padding: 0px; line-height: inherit; overflow: hidden;
+}
+.RadTabStripVertical .rtsLI {
+	list-style: none; margin: 0px; padding: 0px; line-height: inherit; overflow: hidden;
+}
+.RadTabStrip .rtsLI::after {
+	height: 0px; clear: both; display: block; content: "";
+}
+.RadTabStripVertical .rtsLI::after {
+	height: 0px; clear: both; display: block; content: "";
+}
+.RadTabStrip .rtsLink {
+	padding-left: 9px; text-decoration: none; display: block; white-space: nowrap; cursor: pointer;
+}
+.RadTabStripVertical .rtsLink {
+	padding-left: 9px; text-decoration: none; display: block; white-space: nowrap; cursor: pointer;
+}
+.RadTabStrip .rtsLevel .rtsOut {
+	text-decoration: inherit;
+}
+.RadTabStrip .rtsLevel .rtsIn {
+	text-decoration: inherit; font-size:20px;
+}
+.RadTabStrip .rtsLevel .rtsTxt {
+	text-decoration: inherit;
+}
+.RadTabStripVertical .rtsLevel .rtsOut {
+	text-decoration: inherit;
+}
+.RadTabStripVertical .rtsLevel .rtsIn {
+	text-decoration: inherit;
+}
+.RadTabStripVertical .rtsLevel .rtsTxt {
+	text-decoration: inherit;
+}
+.RadTabStrip .rtsOut {
+	padding-right: 9px; display: block;
+}
+.RadTabStripVertical .rtsOut {
+	padding-right: 9px; display: block;
+}
+.RadTabStrip .rtsIn {
+	padding: 0px 5px; display: block;
+}
+.RadTabStripVertical .rtsIn {
+	padding: 0px 5px; display: block;
+}
+.RadTabStrip .rtsImg {
+	border: 0px currentColor; border-image: none; margin-top: -2px; vertical-align: middle;
+}
+.RadTabStripVertical .rtsImg {
+	border: 0px currentColor; border-image: none; margin-top: -2px; vertical-align: middle;
+}
+.RadTabStrip .rtsTxt {
+	display: inline-block;
+}
+.RadTabStripVertical .rtsTxt {
+	display: inline-block;
+}
+.RadTabStrip .rtsImg + .rtsTxt {
+	display: inline-block;
+}
+.RadTabStripVertical .rtsImg + .rtsTxt {
+	display: inline-block;
+}
+.RadTabStrip .rtsLevel1 .rtsTxt {
+	padding: 0px 5px;
+}
+.RadTabStripVertical .rtsLevel1 .rtsTxt {
+	padding: 0px 5px;
+}
+.RadTabStrip a.rtsLink:focus {
+	outline: 0px; position: relative;
+}
+.RadTabStripVertical a.rtsLink:focus {
+	outline: 0px; position: relative;
+}
+.RadTabStrip a.rtsLink:focus {
+	outline-offset: -2px;
+}
+.RadTabStripVertical a.rtsLink:focus {
+	outline-offset: -2px;
+}
+.RadTabStrip a.rtsLink:focus::after {
+	border: 1px dotted rgb(85, 85, 85); border-image: none; left: 1px; top: 1px; right: 1px; bottom: 0px; display: block; position: absolute; content: "";
+}
+.RadTabStripVertical a.rtsLink:focus::after {
+	border: 1px dotted rgb(85, 85, 85); border-image: none; left: 1px; top: 1px; right: 1px; bottom: 0px; display: block; position: absolute; content: "";
+}
+:root .RadTabStrip a.rtsLink:focus::after {
+	display: none; content: none;
+}
+:root .RadTabStripVertical a.rtsLink:focus::after {
+	display: none; content: none;
+}
+.RadTabStrip a.rtsClicked:focus {
+	outline: 0px;
+}
+.RadTabStripVertical a.rtsClicked:focus {
+	outline: 0px;
+}
+.RadTabStrip .rtsDisabled {
+	cursor: default;
+}
+.RadTabStripVertical .rtsDisabled {
+	cursor: default;
+}
+.RadTabStrip .rtsSeparator {
+	height: 26px;
+}
+.RadTabStripVertical .rtsSeparator {
+	height: 26px;
+}
+.RadTabStrip .rtsLevel {
+	width: 100%; padding-top: 1px; clear: both; position: relative;
+}
+.RadTabStrip .rtsLevel1 {
+	padding-top: 0px;
+}
+.RadTabStrip .rtsCenter.rtsLevel {
+	text-align: center;
+}
+.RadTabStrip .rtsScroll {
+	width: 100%; height: 26px; white-space: nowrap;
+}
+.RadTabStrip .rtsPrevArrow {
+	background-position: 0px -208px;
+}
+.RadTabStrip .rtsPrevArrow:hover {
+	background-position: -36px -208px;
+}
+.RadTabStrip .rtsPrevArrowDisabled {
+	background-position: -72px -208px;
+}
+.RadTabStrip .rtsPrevArrowDisabled:hover {
+	background-position: -72px -208px;
+}
+.RadTabStrip .rtsNextArrow {
+	background-position: -18px -208px;
+}
+.RadTabStrip .rtsNextArrow:hover {
+	background-position: -54px -208px;
+}
+.RadTabStrip .rtsNextArrowDisabled {
+	background-position: -90px -208px;
+}
+.RadTabStrip .rtsNextArrowDisabled:hover {
+	background-position: -90px -208px;
+}
+.RadTabStrip .rtsRight .rtsUL {
+	float: right;
+}
+.RadTabStrip .rtsCenter .rtsUL {
+	vertical-align: bottom; float: none; display: inline-block;
+}
+.RadTabStrip .rtsLI {
+	float: left; display: inline;
+}
+.RadTabStrip .rtsLink {
+	text-align: center;
+}
+.RadTabStrip .rtsSeparator {
+	height: 26px;
+}
+.RadTabStrip .rtsBreak {
+	width: 0px; height: 0px; line-height: 0; overflow: hidden; clear: left; font-size: 0px; display: block;
+}
+.RadTabStripVertical {
+	vertical-align: top; display: inline-block;
+}
+.RadTabStripVertical .rtsLevel {
+	height: 100%; float: left; display: inline-block; _width: 150px;
+}
+.RadTabStripVertical .rtsHasWidth {
+	width: 100%;
+}
+.RadTabStripVertical .rtsPrevArrow {
+	background-position: 0px -228px;
+}
+.RadTabStripVertical .rtsPrevArrow:hover {
+	background-position: -36px -228px;
+}
+.RadTabStripVertical .rtsPrevArrowDisabled {
+	background-position: -72px -228px;
+}
+.RadTabStripVertical .rtsPrevArrowDisabled:hover {
+	background-position: -72px -228px;
+}
+.RadTabStripVertical .rtsNextArrow {
+	background-position: -18px -228px;
+}
+.RadTabStripVertical .rtsNextArrow:hover {
+	background-position: -54px -228px;
+}
+.RadTabStripVertical .rtsNextArrowDisabled {
+	background-position: -90px -228px;
+}
+.RadTabStripVertical .rtsNextArrowDisabled:hover {
+	background-position: -90px -228px;
+}
+.RadTabStripVertical .rtsHasWidth .rtsUL {
+	width: 100%;
+}
+.RadTabStripVertical .rtsLI {
+	display: block;
+}
+.RadTabStripVertical .rtsHasWidth .rtsLI {
+	width: 100%;
+}
+.RadTabStripVertical .rtsLink {
+	text-align: right;
+}
+.RadTabStripVertical .rtsSeparator {
+	height: 2px; display: block;
+}
+.RadTabStripVertical .rtsLink {
+	background-position: 0px 0px;
+}
+.RadTabStripVertical .rtsLI .rtsDisabled:hover {
+	background-position: 0px 0px;
+}
+.RadTabStripVertical .rtsLink:hover {
+	background-position: 0px -200px;
+}
+.RadTabStripVertical .rtsSelected {
+	background-position: 0px -400px;
+}
+.RadTabStripVertical .rtsSelected:hover {
+	background-position: 0px -400px;
+}
+.RadTabStrip_rtl .rtsScroll {
+	float: left;
+}
+.RadTabStrip_rtl .rtsScroll.rtsUL {
+	float: left; _float: left;
+}
+.RadTabStrip_rtl .rtsUL {
+	float: right;
+}
+.RadTabStrip_rtl .rtsLI {
+	float: right;
+}
+.RadTabStripRight .rtsLevel {
+	float: right;
+}
+.rtsDetachedDropClueContainer {
+	left: 0px; top: 0px; display: none; position: absolute; z-index: 9000;
+}
+.rtsDropClue {
+	width: 10px; height: 10px; position: absolute; z-index: 9000; background-repeat: no-repeat;
+}
+.rtsDropClueTop {
+	margin-top: -10px; margin-left: -5px;
+}
+.rtsDropClueBottom {
+	margin-top: 0px; margin-left: -5px;
+}
+.rtsDropClueLeft {
+	margin-top: -5px; margin-left: -10px;
+}
+.rtsDropClueRight {
+	margin-top: -5px; margin-left: 0px;
+}
+.rtsDetachedTabContainer {
+	margin: 10px 0px 0px 10px; display: none; position: absolute; z-index: 9000;
+}
+.rtsDetachedTabContainer .rtsGhostTab {
+	background-position: 0px 0px; padding: 2px 10px; border: 1px solid currentColor; border-image: none; overflow: hidden; white-space: nowrap; background-repeat: repeat-x;
+}
+@media screen and (min-width:50px)
+{
+:root .RadTabStripHorizontal .rtsScroll {
+	width: auto;
+}
+:root .RadTabStripHorizontal .rtsScroll .rtsLI {
+	float: none; display: inline-block;
+}
+:root .RadTabStripVertical .rtsScroll .rtsLI {
+	float: none;
+}
+}

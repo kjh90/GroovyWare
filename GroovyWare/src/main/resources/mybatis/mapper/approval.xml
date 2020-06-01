@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="approval">
+
+	<resultMap id="approvalMap" type="mybatis.vo.ApprovalVO">
+		<id column="approval_idx" property="approval_idx" />
+		<result column="draft_code" property="draft_code" />
+		<association property="dvo" javaType="mybatis.vo.DraftVO" select="getDraft" column="draft_code" />
+	</resultMap>
+	
+	<resultMap id="draftMap" type="mybatis.vo.DraftVO">
+		<association column="e_code" property="evo" select="getEmp" javaType="mybatis.vo.EmpVO" />
+	</resultMap>
+
+	<!-- 결재등록 -->
+	<insert id="approvalInsert" parameterType="mybatis.vo.ApprovalVO">
+		insert into
+		APPROVAL_T(approval_idx,draft_code,approval_kinds,e_code)
+		values(approval_seq.NEXTVAL,#{draft_code},'0',#{e_code})
+	</insert>
+
+	<!-- 상태별로 리스트 가져오기 -->
+	<select id="getList" parameterType="java.util.Map" resultMap="approvalMap">
+		SELECT * FROM approval_t
+		WHERE approval_kinds = #{approval_kinds} and e_code = #{e_code}
+
+	</select>
+
+	<select id="getDraft" parameterType="String" resultMap="draftMap">
+		SELECT * FROM drafting_paper_t
+		WHERE draft_code = #{draft_code}
+	</select>
+	
+	<select id="getEmp" parameterType="String" resultType="mybatis.vo.EmpVO">
+		SELECT *
+		FROM emp_t WHERE e_code = #{e_code}
+	</select>
+
+	<!-- 결제 값 하나 가져오기 -->
+	<select id="getOne" parameterType="mybatis.vo.ApprovalVO" resultMap="approvalMap">
+		SELECT * FROM approval_t WHERE approval_kinds =
+		#{approval_kinds} AND e_code = #{e_code}
+	</select>
+
+	<!-- 결재문서 전달하고 난 후 결재상태 -->
+	<update id="afterSendApproval" parameterType="mybatis.vo.ApprovalVO">
+		UPDATE approval_t
+		SET approval_kinds = '1'
+		WHERE e_code = #{e_code} AND draft_code = #{draft_code}
+	</update>
+
+	<!-- 결재반려 -->
+	<update id="returnApproval" parameterType="mybatis.vo.ApprovalVO">
+		UPDATE approval_t
+		SET approval_kinds = '2'
+		WHERE draft_code = #{draft_code} AND e_code= #{e_code}
+	</update>
+	<!-- <update id="returnApproval" parameterType="mybatis.vo.ApprovalVO">
+		UPDATE drafting_paper_t
+		SET draft_status = '2'
+		WHERE draft_code = #{draft_code} AND e_code= #{e_code}
+	</update> -->
+
+	<!-- 결재완료 -->
+	<update id="giveApproval" parameterType="mybatis.vo.ApprovalVO">
+		UPDATE approval_t
+		SET approval_kinds = '3'
+		WHERE draft_code = #{draft_code} AND e_code = #{e_code}
+	</update>
+	<!-- <update id="giveApproval" parameterType="mybatis.vo.ApprovalVO">
+		UPDATE drafting_paper_t
+		SET draft_status = '3'
+		WHERE draft_code = #{draft_code} AND e_code = #{e_code}
+	</update> -->
+	
+	<!-- 결재수신 view -->
+	<resultMap type="mybatis.vo.ApprovalVO" id="aMap">
+		<association property="evo" javaType="mybatis.vo.EmpVO" select="empName" column="e_code" />
+	</resultMap>
+	
+	<select id="empName" parameterType="String" resultType="mybatis.vo.EmpVO">
+		select * from emp_t
+		where e_code = #{e_code}
+	</select>
+	
+	<resultMap type="mybatis.vo.DraftVO" id="dMap">
+		<association property="evo" javaType="mybatis.vo.EmpVO" select="emp" column="e_code" />
+		<association property="avo" javaType="mybatis.vo.ApprovalVO" select="approval" column="draft_code" />
+	</resultMap>
+	
+	<select id="emp" parameterType="String" resultType="mybatis.vo.EmpVO">
+		select * from emp_t
+		where e_code = #{e_code}
+	</select>
+	
+	<select id="approval" parameterType="String" resultMap="aMap">
+		select * from approval_t
+		where draft_code = #{draft_code}
+	</select>
+	
+	
+	<select id="notApprovalView" parameterType="String" resultMap="dMap">
+		select * from drafting_paper_t
+		where draft_code = #{draft_code}
+	</select>
+	<!-- //결재수신 view -->
+</mapper>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="worktime">
+
+
+
+	<!-- 전체 출퇴근 시간설정정보를 선별하는 요소 -->
+	<select id="getWorktime" resultType="mybatis.vo.WorktimeVO">
+		SELECT * FROM worktime_t WHERE worktime_use = '0'</select>
+
+	<!-- 코드가 중복된 값이 있는지 확이하는 요소 -->
+	<select id="chkWorktime" resultType="mybatis.vo.WorktimeVO"
+		parameterType="String">
+		SELECT * FROM worktime_t WHERE worktime_code = #{worktime_code}
+	</select>
+
+	<insert id="addWorktime" parameterType="java.util.Map">
+		INSERT INTO
+		worktime_t(worktime_code,start_worktime,end_worktime,worktime_memo,worktime_use)
+		VALUES(#{worktime_code},#{start_worktime},#{end_worktime},#{worktime_memo},'0')
+	</insert>
+
+	<update id="editWorktime" parameterType="java.util.Map">
+		UPDATE worktime_t
+		SET start_worktime = #{start_worktime}, end_worktime =
+		#{end_worktime},worktime_memo = #{worktime_memo}
+		WHERE worktime_code = #{worktime_code}
+
+	</update>
+
+	<update id="delWorktime" parameterType="String">
+		UPDATE worktime_t
+		SET worktime_use = '1'
+		WHERE worktime_code = #{worktime_code}
+	</update>
+</mapper>
+
+
+
+
+

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="schedule">
+	
+	<!-- 일정리스트 -->
+	<select id="scheduleList" parameterType="String" resultType="mybatis.vo.ScheduleVO">
+		select * from schedule_t
+		where cal_status = '0'
+	</select>
+
+	<!-- 일정등록 -->
+	<insert id="scheduleInsert" parameterType="java.util.Map">
+		insert into schedule_t(cal_idx,cal_title,e_code,cal_start,cal_end,cal_content,cal_color,cal_status)
+		values(schedule_seq.NEXTVAL,#{cal_title},#{e_code},#{cal_start},#{cal_end},#{cal_content},#{cal_color},'0')
+	</insert>
+	
+	<resultMap type="mybatis.vo.ScheduleVO" id="viewMap">
+		<association property="evo" javaType="mybatis.vo.EmpVO" select="empOne" column="e_code" />
+	</resultMap>
+	
+	<select id="empOne" parameterType="String" resultType="mybatis.vo.EmpVO">
+		select * from emp_t
+		where e_code = #{e_code}
+	</select>
+	
+	<!-- 일정관리 뷰 -->
+	<select id="scheduleView" parameterType="String" resultMap="viewMap">
+		select * from schedule_t
+		where cal_idx = #{cal_idx}
+	</select>
+	
+	<!-- 일정관리 수정 -->
+	<update id="scheduleUpdate" parameterType="mybatis.vo.ScheduleVO">
+		update schedule_t
+		set cal_title = #{cal_title},
+			cal_start = #{cal_start},
+			cal_end = #{cal_end},
+			cal_content = #{cal_content},
+			cal_color = #{cal_color}
+		where cal_idx = #{cal_idx}
+	</update>
+	
+	<!-- 일정관리 삭제 -->
+	<update id="scheduleDel" parameterType="String">
+		update schedule_t
+		set cal_status = '1'
+		where cal_idx = #{cal_idx}
+	</update>
+	
+	
+</mapper>

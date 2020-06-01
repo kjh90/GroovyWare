@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mem">
+	 
+	<resultMap type="mybatis.vo.MemVO" id="login_Map">
+		<association property="dvo" select="getDept" column="dept_name" javaType="mybatis.vo.DeptVO"/>		
+	</resultMap>
+
+	<!-- 로그인 -->
+	<select id="login" resultType="mybatis.vo.MemVO" parameterType="java.util.Map">
+		SELECT * FROM emp_t
+		WHERE e_code = upper(#{e_code}) AND  e_id = #{e_id} AND e_pw = #{e_pw}
+	</select>
+	
+	<!-- 권한등록 페이지에서 쓰일 부서명 -->
+	<select id="getDept" resultType="mybatis.vo.DeptVO" parameterType="String">
+		SELECT * FROM dept_t
+		WHERE dept_name =#{name}
+	</select>
+	
+	
+	<!-- 회원가입 -->
+	<update id="addMem" parameterType="java.util.Map">
+		UPDATE emp_t SET  e_id = #{e_id} , e_pw = #{e_pw}
+		WHERE e_code = #{e_code}
+	</update>
+	
+	 
+	<!-- 회원가입 회사ID체크 -->
+	<select id="eid_check" resultType="mybatis.vo.MemVO" parameterType="String">
+		SELECT * FROM emp_t
+		WHERE e_code = #{ecode}
+	</select>
+	
+	<!--  회원가입 ID체크 -->
+	<select id="id_check" resultType="mybatis.vo.MemVO" parameterType="String">
+		SELECT * FROM emp_t
+		WHERE e_id = #{id}
+	</select>	
+	
+	<!-- 회원가입 비밀번호체크 -->
+	<select id="pw_check" resultType="mybatis.vo.MemVO" parameterType="String">
+		SELECT * FROM emp_t
+		WHERE e_pw = #{pw}
+	</select>
+
+	<!-- 비밀번호 변경 시 현재비밀번호 체크 -->
+	<select id="ppw_check" resultType="mybatis.vo.MemVO" parameterType="java.util.Map">
+		SELECT * FROM emp_t
+		WHERE e_pw = #{e_pw} AND e_id =#{e_id}
+	</select>
+
+	
+</mapper>

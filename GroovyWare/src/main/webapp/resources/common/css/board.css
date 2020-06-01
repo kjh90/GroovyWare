@@ -1,0 +1,536 @@
+/*체크박스*/
+/* input[type=checkbox].input_check{position: static;width: 20px;height: 22px;vertical-align: middle;margin: 0;-webkit-appearance: none;outline: 0;background:url(../../images/CheckBoxSprites.gif)}
+input[type=checkbox].input_check:hover{background-position:0 -200px;}
+input[type=checkbox].input_check.on{background-position:0 -420px;}
+input[type=checkbox].input_check.disabled{background-position:0 -860px;} */
+
+/* brd_list2 ==================================================*/
+/* table */
+.search_none{text-align:center;height:475px !important;}
+
+.RadGrid.brd_list2 {border-bottom:1px solid #d1cfc9;}
+.RadGrid.brd_list2 .rgHeaderWrapper {background:#548e51;}
+.RadGrid.brd_list2 table.rgMasterTable {position:relative; clear:both; width:100%; }
+.RadGrid.brd_list2 table.rgMasterTable input,
+.RadGrid.brd_list2 table.rgMasterTable span {font:normal 1em/1.2 "Nanum Gothic", Dotum, arial, Tahoma !important; color:#4c4c4c !important;}
+/* thead */
+.RadGrid.brd_list2 table.rgMasterTable > thead th.rgHeader {padding:14px 8px; font-size:1.154em; font-weight:bold; color:#FFF; text-align:center; vertical-align:middle; background:#548e51;}
+/* tbody - scroll 미사용시*/
+.RadGrid.brd_list2 table.rgMasterTable > tbody tr td {text-overflow:ellipsis; overflow:hidden; height:42px; padding:2px 8px; border-bottom:1px solid #e0deda; color:#4c4c4c; text-align:left; vertical-align:middle; background:#FFF;}
+.RadGrid.brd_list2 table.rgMasterTable > tbody tr:nth-child(even) td {background:#ffffff;}
+.RadGrid.brd_list2 table.rgMasterTable > tbody tr:nth-child(odd) td {background:#fafafa;}
+.RadGrid.brd_list2 table.rgMasterTable > tbody tr:last-child td {border-color:#e0deda;}
+.RadGrid.brd_list2 table.rgMasterTable > tbody tr:hover td {background:#fff9e5;}
+.RadGrid.brd_list2 table.rgMasterTable > tbody tr td a {font-weight:bold; color:#222; text-decoration:underline;}
+/* tbody - scroll 사용시 */
+.RadGrid.brd_list2 .rgDataDiv {background:#FFF;}
+.RadGrid.brd_list2 .rgDataDiv table.rgMasterTable > tbody tr.rgNoRecords td {} /* 값이 없을때 */
+.RadGrid.brd_list2 .rgDataDiv table.rgMasterTable > tbody tr td {} /* 값이 있을때 */
+
+/* 파일첨부 */
+.telerik_file {min-height:80px; overflow:hidden;}
+.telerik_file ul.ruInputs {}
+.telerik_file ul.ruInputs li {}
+.telerik_file ul.ruInputs li span.ruFileWrap.ruStyled {width:auto !important;}
+.telerik_file ul.ruInputs li span.ruFileWrap.ruStyled input.ruFakeInput {width:100% !important;}
+.telerik_file ul.ruInputs li span.ruFileWrap.ruStyled .ruUploadProgress {}
+.telerik_file ul.ruInputs li input.ruButton.ruRemove {}
+.telerik_file ul.ruInputs li:last-child span.ruFileWrap.ruStyled {width:100% !important;}
+
+/* tbody - telerik (input) ====================*/
+/* telerik:RadNumericTextBox */
+.RadGrid.brd_list2 table.rgMasterTable > tbody tr td .riSingle.RadInput {width:100% !important;}
+.RadGrid.brd_list2 table.rgMasterTable > tbody tr td .riSingle.RadInput input.riTextBox {width:100% !important; height:30px !important; border:1px solid #d5d9e0 !important; box-sizing:border-box !important;}
+.RadGrid.brd_list2 table.rgMasterTable > tbody tr td.col_rg .riSingle.RadInput input.riTextBox {text-align:right;}
+/* DropDownItemTemplate */
+.RadGrid.brd_list2 table.rgMasterTable > tbody tr td .RadAutoCompleteBox {width:100% !important;}
+.RadGrid.brd_list2 table.rgMasterTable > tbody tr td .RadAutoCompleteBox .racTokenList {overflow:hidden; height:30px !important; box-sizing:border-box !important; border:1px solid #d5d9e0 !important; white-space: nowrap;}
+.RadGrid.brd_list2 table.rgMasterTable > tbody tr td .RadAutoCompleteBox .racTokenList .racTextToken {display:inline-block; float: none; width:100% !important; height:30px !important; line-height:30px !important; border:0 !important; text-align:left;}
+.RadGrid.brd_list2 table.rgMasterTable > tbody tr td .RadAutoCompleteBox .racTokenList input.racInput {display:inline-block; float: none; height:30px !important; line-height:30px !important; }
+.RadGrid.brd_list2 table.rgMasterTable > tbody tr td .RadAutoCompleteBox .racTokenList input.racInput.radPreventDecorate {}
+/* telerik:RadNumericTextBox */
+.RadGrid.brd_list2 table.rgMasterTable > tbody tr td .riSingle.RadInput {width:100% !important;}
+.RadGrid.brd_list2 table.rgMasterTable > tbody tr td .riSingle.RadInput input.riTextBox {width:100% !important; height:30px !important; border:1px solid #d5d9e0 !important; box-sizing:border-box !important;}
+/* calendar (telerik:RadDatePicker) */
+.RadGrid.brd_list2 table.rgMasterTable > tbody tr td div.RadPicker {width:100% !important;}
+.RadGrid.brd_list2 table.rgMasterTable > tbody tr td div.RadPicker table tbody td {padding:0; border-bottom:0;}
+.RadGrid.brd_list2 table.rgMasterTable > tbody tr td div.RadPicker table tbody td a.rcCalPopup {}
+
+/* telerik:RadComboBox - 리스트페이지의 콤보박스 */
+.RadGrid.brd_list2 table.rgMasterTable > tbody td .RadComboBox {display:inline-block; width:auto !important; padding-right:5px; border:1px solid #d5d9e0; box-sizing:border-box; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; -ms-box-sizing:border-box; cursor:pointer; background:#FFF;}
+.RadGrid.brd_list2 table.rgMasterTable > tbody td .RadComboBox table > tbody tr.rcbReadOnly {background:#FFF;}
+.RadGrid.brd_list2 table.rgMasterTable > tbody td .RadComboBox table > tbody tr.rcbReadOnly td {border-bottom:0 !important;}
+.RadGrid.brd_list2 table.rgMasterTable > tbody td .RadComboBox table > tbody tr.rcbReadOnly .rcbEmptyMessage {font-style:normal; }
+.RadGrid.brd_list2 table.rgMasterTable > tbody td .RadComboBox table > tbody tr.rcbReadOnly .rcbInputCellLeft {height:200% !important; line-height:2 !important; padding:0 0 0 8px !important; vertical-align:middle !important; }
+.RadGrid.brd_list2 table.rgMasterTable > tbody td .RadComboBox table > tbody tr.rcbReadOnly .rcbArrowCellRight {width:40px; height:35px; background:url("../../images/selectbox_ic.png") no-repeat center center;}
+.RadGrid.brd_list2 table.rgMasterTable > tbody td .RadComboBox table > tbody tr.rcbReadOnly td.rcbInputCell {cursor:pointer !important; background-color:#FFF;}
+.RadGrid.brd_list2 table.rgMasterTable > tbody td .RadComboBox table > tbody tr.rcbReadOnly td.rcbInputCellLeft input.rcbInput { padding-top:5px;}
+.RadGrid.brd_list2 table.rgMasterTable > tbody td .RadComboBox table > tbody tr.rcbReadOnly td.rcbArrowCellRight a {height:35px;}
+
+/* tfoot (paginate) ====================*/
+.RadGrid.brd_list2 table.rgMasterTable tfoot tr.rgPager {border-top:1px solid #d1cfc9;}
+.RadGrid.brd_list2 table.rgMasterTable tfoot tr.rgPager td {padding:8px 20px; background:#e0ded5;}
+.RadGrid.brd_list2 table.rgMasterTable tfoot tr.rgPager td table {}
+.RadGrid.brd_list2 table.rgMasterTable tfoot tr.rgPager td table > thead {display:none;}
+.RadGrid.brd_list2 table.rgMasterTable tfoot tr.rgPager td table > tbody td.rgPagerCell {padding:0; background:#e0ded5;}
+.RadGrid.brd_list2 table.rgMasterTable tfoot tr.rgPager td table > tbody td.rgPagerCell .rgNumPart {float:left;}
+.RadGrid.brd_list2 table.rgMasterTable tfoot tr.rgPager td table > tbody td.rgPagerCell .rgNumPart a {display:inline-block; width:26px; height:21px; line-height:30px !important; padding-top:5px; font-weight:bold; color:#4c4c4c; text-align:center;}
+.RadGrid.brd_list2 table.rgMasterTable tfoot tr.rgPager td table > tbody td.rgPagerCell .rgNumPart a.rgCurrentPage {border:1px solid #d9d6ce; background:#FFF;}
+.RadGrid.brd_list2 table.rgMasterTable tfoot tr.rgPager td table > tbody td.rgPagerCell .rgInfoPart {float:right; margin-top:7px; color:#7c7c7c;}
+.RadGrid.brd_list2 table.rgMasterTable tfoot tr.rgPager td table > tbody td.rgPagerCell .rgInfoPart strong {margin-right:5px; color:#4c4c4c;}
+/* tfoot (일반) - scroll 미사용시*/
+.RadGrid.brd_list2 table.rgMasterTable tfoot tr.rgFooter {border-top:1px solid #d1cfc9;}
+.RadGrid.brd_list2 table.rgMasterTable tfoot tr.rgFooter td {height:42px; padding:2px 5px; vertical-align:middle; background:#e0ded5;}
+.RadGrid.brd_list2 table.rgMasterTable tfoot tr.rgFooter td .riSingle.RadInput {width:100% !important;}
+.RadGrid.brd_list2 table.rgMasterTable tfoot tr.rgFooter td .riSingle.RadInput input.riTextBox {width:100% !important; height:30px !important; border:1px solid #d5d9e0;}
+.RadGrid.brd_list2 table.rgMasterTable tfoot tr.rgFooter td.col_rg .riSingle.RadInput input.riTextBox {text-align:right;}
+/* tfoot (일반) - scroll 사용시*/
+.RadGrid.brd_list2 .rgFooterWrapper {border-top:1px solid #d1cfc9; background:#e0ded5;}
+.RadGrid.brd_list2 .rgFooterWrapper .rgFooterDiv table.rgMasterTable tr.rgFooter td {background:#e0ded5;}
+.RadGrid.brd_list2 .rgFooterWrapper .rgFooterDiv table.rgMasterTable tr.rgFooter td .riSingle.RadInput {width:100% !important;}
+.RadGrid.brd_list2 .rgFooterWrapper .rgFooterDiv table.rgMasterTable tr.rgFooter td .riSingle.RadInput input.riTextBox {width:100% !important; height:30px !important; border:1px solid #d5d9e0;}
+
+
+/* brd_list2 (th두줄) -  ====================*/
+/* scroll 사용 */
+.RadGrid.brd_list2.brd_list_2line {border-bottom:1px solid #d1cfc9;}
+.RadGrid.brd_list2.brd_list_2line .rgHeaderWrapper .rgHeaderDiv {background:#6e6867;}
+.RadGrid.brd_list2.brd_list_2line .rgHeaderWrapper .rgHeaderDiv table.rgMasterTable {width:100%;}
+.RadGrid.brd_list2.brd_list_2line .rgHeaderWrapper .rgHeaderDiv table.rgMasterTable thead tr.rgMultiHeaderRow th {padding:6px 4px; border-bottom:1px solid #CCC; border-right:1px solid #CCC; font-size:1.0em;}
+/* scroll 미사용 */
+.RadGrid.brd_list2.brd_list_2line table.rgMasterTable > thead th.rgHeader {padding:6px 4px; border-bottom:1px solid #CCC; border-right:1px solid #CCC; font-size:1.0em; }
+
+
+/* brd_list_sml2 (팝업안의 리스트 - 탭 사용시 그리드에 라인 안생기는 Class)*/
+/* table */
+.RadGrid.brd_list_sml2 {border-bottom:1px solid #d1cfc9; border-top:0px; border-left:0px; border-right:0px;}
+.RadGrid.brd_list_sml2 .rgHeaderWrapper {background:#6e6867;}
+.RadGrid.brd_list_sml2 table.rgMasterTable {position:relative; clear:both; width:100%;}
+.RadGrid.brd_list_sml2 table.rgMasterTable input {font:normal 12px/1.2 "Nanum Gothic", Dotum, arial, Tahoma !important; color:#4c4c4c !important;}
+/* thead */
+.RadGrid.brd_list_sml2 table.rgMasterTable > thead th.rgHeader {padding:5px 8px; font-weight:bold; color:#FFF; text-align:center; background:#6e6867;}
+/* tbody */
+.RadGrid.brd_list_sml2 table.rgMasterTable > tbody td {text-overflow:ellipsis; overflow:hidden; height:26px; padding:2px 5px ; border-bottom:1px solid #e0deda; color:#4c4c4c; text-align:left; vertical-align:middle; background:#FFF;}
+.RadGrid.brd_list_sml2 table.rgMasterTable > tbody tr:nth-child(even) td {background:#ffffff;}
+.RadGrid.brd_list_sml2 table.rgMasterTable > tbody tr:nth-child(odd) td {background:#fafafa;}
+.RadGrid.brd_list_sml2 table.rgMasterTable > tbody tr:last-child td {border-color:#e0deda;}
+.RadGrid.brd_list_sml2 table.rgMasterTable > tbody tr:hover td {background:#fff9e5;}
+.RadGrid.brd_list_sml2 table.rgMasterTable > tbody td.col_tit {padding-left:20px; color:#000; text-align:left;}
+.RadGrid.brd_list_sml2 table.rgMasterTable > tbody td.col_lf {padding-left:20px; text-align:left;}
+.RadGrid.brd_list_sml2 table.rgMasterTable > tbody td a {font-weight:bold; color:#222; text-decoration:underline;}
+
+
+/* tbody - telerik (input) ====================*/
+/* tbody (input) */
+.RadGrid.brd_list_sml2 table.rgMasterTable > tbody td .RadAjaxPanel .RadAutoCompleteBox .racTokenList input.racInput {}
+.RadGrid.brd_list_sml2 table.rgMasterTable > tbody td .RadAutoCompleteBox .racTokenList .racTextToken {}
+.RadGrid.brd_list_sml2 table.rgMasterTable > tbody td .RadAutoCompleteBox .racTokenList input.racInput.radPreventDecorate {}
+.RadGrid.brd_list_sml2 table.rgMasterTable > tbody td .RadAutoCompleteBox .racTokenList input.racInput {}
+/* input (공통) */
+.RadGrid.brd_list_sml2 table.rgMasterTable > tbody td .riSingle.RadInput {width:100% !important;}
+.RadGrid.brd_list_sml2 table.rgMasterTable > tbody td .riSingle.RadInput input.riTextBox, 
+.RadGrid.brd_list_sml2 table.rgMasterTable > tbody td .RadAutoCompleteBox .racTokenList {width:100% !important; height:auto !important; border:1px solid #d5d9e0 !important;}
+/* selectbox (RadComboBox) */
+.RadGrid.brd_list_sml2 table.rgMasterTable > tbody td { padding:1px !important;}
+.RadGrid.brd_list_sml2 table.rgMasterTable > tbody td table td { padding:2px 5px;}
+.RadGrid.brd_list_sml2 table.rgMasterTable > tbody td input[type="text"] { width:100% !important;}
+.RadGrid.brd_list_sml2 table.rgMasterTable > tbody td .riSingle.RadInput input.riTextBox { height:28px !important; }
+.RadGrid.brd_list_sml2 table.rgMasterTable > tbody td .RadComboBox {display:inline-block; width:auto !important; padding-right:5px; border:1px solid #d5d9e0; box-sizing:border-box; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; -ms-box-sizing:border-box; cursor:pointer; background:#FFF;}
+.RadGrid.brd_list_sml2 table.rgMasterTable > tbody td .RadComboBox table > tbody tr.rcbReadOnly {background:#FFF;}
+.RadGrid.brd_list_sml2 table.rgMasterTable > tbody td .RadComboBox table > tbody tr.rcbReadOnly td {border-bottom:0 !important;}
+.RadGrid.brd_list_sml2 table.rgMasterTable > tbody td .RadComboBox table > tbody tr.rcbReadOnly .rcbEmptyMessage {font-style:normal; }
+.RadGrid.brd_list_sml2 table.rgMasterTable > tbody td .RadComboBox table > tbody tr.rcbReadOnly .rcbInputCellLeft {height:100% !important; line-height:2 !important; padding:0 0 0 8px !important; vertical-align:middle !important; }
+.RadGrid.brd_list_sml2 table.rgMasterTable > tbody td .RadComboBox table > tbody tr.rcbReadOnly .rcbArrowCellRight {width:28px; height:16px; background:url("../../images/selectbox_ic.png") no-repeat center center;}
+.RadGrid.brd_list_sml2 table.rgMasterTable > tbody td .RadComboBox table > tbody tr.rcbReadOnly td.rcbInputCell {cursor:pointer !important; background-color:#FFF;}
+.RadGrid.brd_list_sml2 table.rgMasterTable > tbody td .RadComboBox table > tbody tr.rcbReadOnly td.rcbInputCellLeft input.rcbInput { padding-top:5px;}
+.RadGrid.brd_list_sml2 table.rgMasterTable > tbody td .RadComboBox table > tbody tr.rcbReadOnly td.rcbArrowCellRight a {height:16px;}
+/*  */
+.RadGrid.brd_list_sml2 table.rgMasterTable > tbody td .RadAutoCompleteBox {max-width:100%; min-width:100%;}
+.RadGrid.brd_list_sml2 table.rgMasterTable > tbody td .RadAutoCompleteBox .racTokenList {width:100%; border:1px solid #d5d9e0; padding-right:36px; box-sizing:border-box; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; -ms-box-sizing:border-box; background:#FFF;}
+.RadGrid.brd_list_sml2 table.rgMasterTable > tbody td .RadAutoCompleteBox .racTokenList input { height:20px; line-height:22px; background:#FFF;}
+/* calendar (telerik:RadDatePicker) */
+.RadGrid.brd_list_sml2 table.rgMasterTable > tbody tr td div.RadPicker {width:100% !important;}
+.RadGrid.brd_list_sml2 table.rgMasterTable > tbody tr td div.RadPicker table tbody td {padding:0; border-bottom:0; vertical-align:top; background:none !important;}
+.RadGrid.brd_list_sml2 table.rgMasterTable > tbody tr td div.RadPicker table tbody td a.rcCalPopup {}
+
+
+/* tfoot (paginate) ====================*/
+.RadGrid.brd_list_sml2 table.rgMasterTable tfoot tr.rgPager {border-top:1px solid #d1cfc9;}
+.RadGrid.brd_list_sml2 table.rgMasterTable tfoot tr.rgPager td {padding:8px 20px; background:#e0ded5;}
+.RadGrid.brd_list_sml2 table.rgMasterTable tfoot tr.rgPager td table {}
+.RadGrid.brd_list_sml2 table.rgMasterTable tfoot tr.rgPager td table > thead {display:none;}
+.RadGrid.brd_list_sml2 table.rgMasterTable tfoot tr.rgPager td table > tbody td.rgPagerCell {padding:0; background:#e0ded5;}
+.RadGrid.brd_list_sml2 table.rgMasterTable tfoot tr.rgPager td table > tbody td.rgPagerCell .rgNumPart {float:left;}
+.RadGrid.brd_list_sml2 table.rgMasterTable tfoot tr.rgPager td table > tbody td.rgPagerCell .rgNumPart a {display:inline-block; width:26px; height:26px; line-height:26px; font-weight:bold; color:#4c4c4c; text-align:center;}
+.RadGrid.brd_list_sml2 table.rgMasterTable tfoot tr.rgPager td table > tbody td.rgPagerCell .rgNumPart a.rgCurrentPage {border:1px solid #d9d6ce; background:#FFF;}
+.RadGrid.brd_list_sml2 table.rgMasterTable tfoot tr.rgPager td table > tbody td.rgPagerCell .rgInfoPart {float:right; margin-top:7px; color:#7c7c7c;}
+.RadGrid.brd_list_sml2 table.rgMasterTable tfoot tr.rgPager td table > tbody td.rgPagerCell .rgInfoPart strong {margin-right:5px; color:#4c4c4c;}
+/* tfoot () */
+.RadGrid.brd_list_sml2 table.rgMasterTable tfoot tr.rgFooter {border-top:1px solid #d1cfc9;}
+.RadGrid.brd_list_sml2 table.rgMasterTable tfoot tr.rgFooter td {padding:8px 20px; background:#e0ded5;}
+.RadGrid.brd_list_sml2 table.rgMasterTable tfoot tr.rgFooter td .riSingle.RadInput input.riTextBox {width:100% !important; height:24px !important; border:1px solid #d5d9e0;}
+
+
+/* brd_list_sml2line (th두줄) ====================*/
+.RadGrid.brd_list_sml2.brd_list_sml2line {border-bottom:1px solid #d1cfc9;}
+.RadGrid.brd_list_sml2.brd_list_sml2line .rgHeaderWrapper .rgHeaderDiv {background:#6e6867;}
+.RadGrid.brd_list_sml2.brd_list_sml2line .rgHeaderWrapper .rgHeaderDiv table.rgMasterTable {width:100%;}
+.RadGrid.brd_list_sml2.brd_list_sml2line .rgHeaderWrapper .rgHeaderDiv table.rgMasterTable thead tr.rgMultiHeaderRow th {padding:8px 4px; border-bottom:1px solid #CCC; border-right:1px solid #CCC;}
+
+.RadGrid.brd_list_sml2.brd_list_sml2line .rgDataDiv {background:#FFF;}
+.RadGrid.brd_list_sml2.brd_list_sml2line .rgDataDiv table.rgMasterTable tbody td {}
+
+
+/* brd_list_sml (팝업안의 리스트) ==================================================*/
+/* table */
+.RadGrid.brd_list_sml {border-bottom:1px solid #d1cfc9; }
+.RadGrid.brd_list_sml .rgHeaderWrapper {background:#6e6867;}
+.RadGrid.brd_list_sml table.rgMasterTable {position:relative; clear:both; width:100%;}
+.RadGrid.brd_list_sml table.rgMasterTable input {font:normal 12px/1.2 "Nanum Gothic", Dotum, arial, Tahoma !important; color:#4c4c4c !important;}
+/* thead */
+.RadGrid.brd_list_sml table.rgMasterTable > thead th.rgHeader {padding:5px 8px; font-weight:bold; color:#FFF; text-align:center; background:#6e6867;}
+/* tbody */
+.RadGrid.brd_list_sml table.rgMasterTable > tbody td {text-overflow:ellipsis; overflow:hidden; height:26px; padding:2px 5px ; border-bottom:1px solid #e0deda; color:#4c4c4c; text-align:left; vertical-align:middle; background:#FFF;}
+.RadGrid.brd_list_sml table.rgMasterTable > tbody tr:nth-child(even) td {background:#ffffff;}
+.RadGrid.brd_list_sml table.rgMasterTable > tbody tr:nth-child(odd) td {background:#fafafa;}
+.RadGrid.brd_list_sml table.rgMasterTable > tbody tr:last-child td {border-color:#e0deda;}
+.RadGrid.brd_list_sml table.rgMasterTable > tbody tr:hover td {background:#fff9e5;}
+.RadGrid.brd_list_sml table.rgMasterTable > tbody td.col_tit {padding-left:20px; color:#000; text-align:left;}
+.RadGrid.brd_list_sml table.rgMasterTable > tbody td.col_lf {padding-left:20px; text-align:left;}
+.RadGrid.brd_list_sml table.rgMasterTable > tbody td a {font-weight:bold; color:#222; text-decoration:underline;}
+
+
+/* tbody - telerik (input) ====================*/
+/* tbody (input) */
+.RadGrid.brd_list_sml table.rgMasterTable > tbody td .RadAjaxPanel .RadAutoCompleteBox .racTokenList input.racInput {}
+.RadGrid.brd_list_sml table.rgMasterTable > tbody td .RadAutoCompleteBox .racTokenList .racTextToken {}
+.RadGrid.brd_list_sml table.rgMasterTable > tbody td .RadAutoCompleteBox .racTokenList input.racInput.radPreventDecorate {}
+.RadGrid.brd_list_sml table.rgMasterTable > tbody td .RadAutoCompleteBox .racTokenList input.racInput {}
+/* input (공통) */
+.RadGrid.brd_list_sml table.rgMasterTable > tbody td .riSingle.RadInput {width:100% !important;}
+.RadGrid.brd_list_sml table.rgMasterTable > tbody td .riSingle.RadInput input.riTextBox, 
+.RadGrid.brd_list_sml table.rgMasterTable > tbody td .RadAutoCompleteBox .racTokenList {width:100% !important; height:28px !important; border:1px solid #d5d9e0 !important;}
+/* selectbox (RadComboBox) */
+.RadGrid.brd_list_sml table.rgMasterTable > tbody td { padding:1px !important;}
+.RadGrid.brd_list_sml table.rgMasterTable > tbody td table td { padding:2px 5px;}
+.RadGrid.brd_list_sml table.rgMasterTable > tbody td input[type="text"] { width:100% !important;}
+.RadGrid.brd_list_sml table.rgMasterTable > tbody td .riSingle.RadInput input.riTextBox { height:28px !important; }
+.RadGrid.brd_list_sml table.rgMasterTable > tbody td .RadComboBox {display:inline-block; width:auto !important; padding-right:5px; border:1px solid #d5d9e0; box-sizing:border-box; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; -ms-box-sizing:border-box; cursor:pointer; background:#FFF;}
+.RadGrid.brd_list_sml table.rgMasterTable > tbody td .RadComboBox table > tbody tr.rcbReadOnly {background:#FFF;}
+.RadGrid.brd_list_sml table.rgMasterTable > tbody td .RadComboBox table > tbody tr.rcbReadOnly td {border-bottom:0 !important;}
+.RadGrid.brd_list_sml table.rgMasterTable > tbody td .RadComboBox table > tbody tr.rcbReadOnly .rcbEmptyMessage {font-style:normal; }
+.RadGrid.brd_list_sml table.rgMasterTable > tbody td .RadComboBox table > tbody tr.rcbReadOnly .rcbInputCellLeft {height:100% !important; line-height:2 !important; padding:0 0 0 8px !important; vertical-align:middle !important; }
+.RadGrid.brd_list_sml table.rgMasterTable > tbody td .RadComboBox table > tbody tr.rcbReadOnly .rcbArrowCellRight {width:28px; height:16px; background:url("../../images/selectbox_ic.png") no-repeat center center;}
+.RadGrid.brd_list_sml table.rgMasterTable > tbody td .RadComboBox table > tbody tr.rcbReadOnly td.rcbInputCell {cursor:pointer !important; background-color:#FFF;}
+.RadGrid.brd_list_sml table.rgMasterTable > tbody td .RadComboBox table > tbody tr.rcbReadOnly td.rcbInputCellLeft input.rcbInput { padding-top:5px;}
+.RadGrid.brd_list_sml table.rgMasterTable > tbody td .RadComboBox table > tbody tr.rcbReadOnly td.rcbArrowCellRight a {height:16px;}
+/*  */
+.RadGrid.brd_list_sml table.rgMasterTable > tbody td .RadAutoCompleteBox {max-width:100%; min-width:100%;}
+.RadGrid.brd_list_sml table.rgMasterTable > tbody td .RadAutoCompleteBox .racTokenList {width:100%; border:1px solid #d5d9e0; padding-right:36px; box-sizing:border-box; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; -ms-box-sizing:border-box; background:#FFF;}
+.RadGrid.brd_list_sml table.rgMasterTable > tbody td .RadAutoCompleteBox .racTokenList input { height:20px; line-height:22px; background:#FFF;}
+/* calendar (telerik:RadDatePicker) */
+.RadGrid.brd_list_sml table.rgMasterTable > tbody tr td div.RadPicker {width:100% !important;}
+.RadGrid.brd_list_sml table.rgMasterTable > tbody tr td div.RadPicker table tbody td {padding:0; border-bottom:0; vertical-align:top; background:none !important;}
+.RadGrid.brd_list_sml table.rgMasterTable > tbody tr td div.RadPicker table tbody td a.rcCalPopup {}
+
+
+/* tfoot (paginate) ====================*/
+.RadGrid.brd_list_sml table.rgMasterTable tfoot tr.rgPager {border-top:1px solid #d1cfc9;}
+.RadGrid.brd_list_sml table.rgMasterTable tfoot tr.rgPager td {padding:8px 20px; background:#e0ded5;}
+.RadGrid.brd_list_sml table.rgMasterTable tfoot tr.rgPager td table {}
+.RadGrid.brd_list_sml table.rgMasterTable tfoot tr.rgPager td table > thead {display:none;}
+.RadGrid.brd_list_sml table.rgMasterTable tfoot tr.rgPager td table > tbody td.rgPagerCell {padding:0; background:#e0ded5;}
+.RadGrid.brd_list_sml table.rgMasterTable tfoot tr.rgPager td table > tbody td.rgPagerCell .rgNumPart {float:left;}
+.RadGrid.brd_list_sml table.rgMasterTable tfoot tr.rgPager td table > tbody td.rgPagerCell .rgNumPart a {display:inline-block; width:26px; height:26px; line-height:26px; font-weight:bold; color:#4c4c4c; text-align:center;}
+.RadGrid.brd_list_sml table.rgMasterTable tfoot tr.rgPager td table > tbody td.rgPagerCell .rgNumPart a.rgCurrentPage {border:1px solid #d9d6ce; background:#FFF;}
+.RadGrid.brd_list_sml table.rgMasterTable tfoot tr.rgPager td table > tbody td.rgPagerCell .rgInfoPart {float:right; margin-top:7px; color:#7c7c7c;}
+.RadGrid.brd_list_sml table.rgMasterTable tfoot tr.rgPager td table > tbody td.rgPagerCell .rgInfoPart strong {margin-right:5px; color:#4c4c4c;}
+/* tfoot () */
+.RadGrid.brd_list_sml table.rgMasterTable tfoot tr.rgFooter {border-top:1px solid #d1cfc9;}
+.RadGrid.brd_list_sml table.rgMasterTable tfoot tr.rgFooter td {padding:8px 20px; background:#e0ded5;}
+.RadGrid.brd_list_sml table.rgMasterTable tfoot tr.rgFooter td .riSingle.RadInput input.riTextBox {width:100% !important; height:24px !important; border:1px solid #d5d9e0;}
+
+
+/* brd_list_sml2line (th두줄) ====================*/
+.RadGrid.brd_list_sml.brd_list_sml2line {border-bottom:1px solid #d1cfc9;}
+.RadGrid.brd_list_sml.brd_list_sml2line .rgHeaderWrapper .rgHeaderDiv {background:#6e6867;}
+.RadGrid.brd_list_sml.brd_list_sml2line .rgHeaderWrapper .rgHeaderDiv table.rgMasterTable {width:100%;}
+.RadGrid.brd_list_sml.brd_list_sml2line .rgHeaderWrapper .rgHeaderDiv table.rgMasterTable thead tr.rgMultiHeaderRow th {padding:8px 4px; border-bottom:1px solid #CCC; border-right:1px solid #CCC;}
+
+.RadGrid.brd_list_sml.brd_list_sml2line .rgDataDiv {background:#FFF;}
+.RadGrid.brd_list_sml.brd_list_sml2line .rgDataDiv table.rgMasterTable tbody td {}
+
+
+
+
+/* brd_write2 ==================================================*/
+/* brd_write2 */
+table.brd_write2 {position:relative; clear:both; width:100%;}
+table.brd_write2 input {font:normal 12px/1.2 "Nanum Gothic", Dotum, arial, Tahoma !important;}
+table.brd_write2 th {padding:10px 5px 5px 10px; font-weight:bold; color:#333; text-align:left;}
+table.brd_write2 td {padding:3px 20px 3px 2px;}
+/* */
+table.brd_write2 td .bx_multi_inp {}
+table.brd_write2 td .bx_multi_inp .lf_40per {float:left; width:40%; padding-right:5px; box-sizing:border-box; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; -ms-box-sizing:border-box;}
+table.brd_write2 td .bx_multi_inp .rg_60per {float:left; width:60%;}
+table.brd_write2 td .bx_multi_inp .lf_50per {float:left; width:50%; padding-right:5px; box-sizing:border-box; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; -ms-box-sizing:border-box;}
+table.brd_write2 td .bx_multi_inp .rg_50per {float:left; width:50%;}
+
+/* input text */
+table.brd_write2 td .inp_full input {width:100%;}
+table.brd_write2 td .inp_must input {background:#ebf7c6;}
+table.brd_write2 td .inp_read input {background:#f2f0eb;}
+table.brd_write2 td .inp_btn {position:relative; display:block;}
+table.brd_write2 td .inp_btn input {}
+table.brd_write2 td .inp_btn .btn_cal {display:inline-block; position:absolute; right:0; top:0; width:36px; height:30px; text-indent:-3000px; background:#8c8482 url("../../images/common/ic_calendar.png") no-repeat center center;}
+
+
+
+/* telerik_input ==================================================*/
+/* telerik_input (text) */
+table.brd_write2 .telerik_bx {display:block; line-height:2;}
+table.brd_write2 .telerik_bx.span_txt {line-height:2;}
+/* asp:TextBox */
+table.brd_write2 .telerik_bx > input {width:100%;}
+/* telerik:RadTextBox */
+table.brd_write2 .telerik_bx .riSingle.RadInput {width:100% !important;}
+table.brd_write2 .telerik_bx .riSingle.RadInput > input {width:100%;}
+table.brd_write2 .telerik_bx .riSingle.RadInput input.rfdDecorated {width:100% !important; height:30px !important; padding:0 5px !important; border:1px solid #d5d9e0 !important;*height:26px !important; *padding:0 !important;}
+
+table.brd_write2 .telerik_bx_in { vertical-align:middle; }
+table.brd_write2 .telerik_bx_in .riSingle.RadInput {width:47% !important;}
+table.brd_write2 .telerik_bx_in .riSingle.RadInput > input {width:100%;}
+table.brd_write2 .telerik_bx_in .riSingle.RadInput input.rfdDecorated {width:100% !important; height:30px !important; padding:0 5px !important; border:1px solid #d5d9e0 !important;*height:26px !important; *padding:0 !important;}
+/* telerik:RadNumericTextBox */
+table.brd_write2 .telerik_bx .RadAjaxPanel {min-width:100% !important;}
+table.brd_write2 .telerik_bx .RadAjaxPanel .riSingle.RadInput {width:100% !important;}
+table.brd_write2 .telerik_bx .RadAjaxPanel .riSingle.RadInput input.rfdDecorated {width:100% !important; height:30px !important; padding:0 5px !important; border:1px solid #d5d9e0 !important;*height:26px !important; *padding:0 !important;}
+/*  */
+table.brd_write2 .telerik_bx .RadAjaxPanel .RadAutoCompleteBox .racTokenList {width:100%; height:30px; line-height:28px; border:1px solid #d5d9e0; padding-right:36px; box-sizing:border-box; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; -ms-box-sizing:border-box; background:#FFF;}
+/* input (telerik:RadAutoCompleteBox) */
+table.brd_write2 .telerik_bx .RadAutoCompleteBox {width:100%;}
+table.brd_write2 .telerik_bx .RadAutoCompleteBox .racTokenList {width:100%; height:30px; line-height:28px; border:1px solid #d5d9e0; padding-right:36px; box-sizing:border-box; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; -ms-box-sizing:border-box; background:#FFF;}
+/* textarea */
+table.brd_write2 .telerik_bx .riSingle.RadInput textarea {width:100%; padding:5px; border:1px solid #d5d9e0; box-sizing:border-box; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; -ms-box-sizing:border-box;}
+/* selectbox (RadDropDownList) */
+table.brd_write2 .telerik_bx .RadDropDownList {width:100%;}
+table.brd_write2 .telerik_bx .RadDropDownList .rddlInner {display:block; height:28px; line-height:28px; padding:0 30px 0 10px !important; border:1px solid #d5d9e0; cursor:pointer; background:#FFF; }
+table.brd_write2 .telerik_bx .RadDropDownList .rddlInner .rddlFakeInput {height:100% !important; line-height:2 !important;}
+table.brd_write2 .telerik_bx .RadDropDownList .rddlInner .rddlIcon {width:28px; height:28px; background:url("../../images/selectbox_ic.png") no-repeat center center;}
+/* selectbox - 옵션 목록 */
+table.brd_write2 .telerik_bx .rddlSlide {background:#FFF;}
+table.brd_write2 .telerik_bx .rddlSlide .rddlPopup {border:1px solid #d5d9e0 !important; cursor:pointer !important; }
+table.brd_write2 .telerik_bx .rddlSlide .rddlPopup ul.rddlList li {line-height:1.8;}
+/* selectbox (RadComboBox) */
+table.brd_write2 .telerik_bx .RadComboBox {display:inline-block; width:auto; padding-right:5px; border:1px solid #d5d9e0; box-sizing:border-box; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; -ms-box-sizing:border-box; cursor:pointer; background:#FFF;}
+table.brd_write2 .telerik_bx .RadComboBox table > tbody tr.rcbReadOnly {background:#FFF;}
+table.brd_write2 .telerik_bx .RadComboBox table > tbody tr.rcbReadOnly .rcbEmptyMessage {font-style:normal; }
+table.brd_write2 .telerik_bx .RadComboBox table > tbody tr.rcbReadOnly .rcbInputCellLeft {height:100% !important; line-height:2 !important;}
+table.brd_write2 .telerik_bx .RadComboBox table > tbody tr.rcbReadOnly .rcbArrowCellRight {width:28px; height:28px; background:url("../../images/selectbox_ic.png") no-repeat center center;}
+table.brd_write2 .telerik_bx .RadComboBox table > tbody tr.rcbReadOnly .rcbInputCellLeft input.rcbInput {cursor:pointer !important;}
+table.brd_write2 .telerik_bx .RadComboBox table > tbody tr.rcbReadOnly .rcbArrowCellRight a {cursor:pointer !important;}
+/* selectbox (asp:DropDownList) */
+table.brd_write2 .telerik_bx a.rfdSelect {display:inline-block; padding:0 10px 0 5px; border:1px solid #d5d9e0; box-sizing:border-box; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; -ms-box-sizing:border-box; cursor:pointer; background:#FFF; background-image:none; background-color:#FFF;}
+table.brd_write2 .telerik_bx a.rfdSelect span.rfdSelectOuter {width:auto; height:28px; line-height:28px; background:url("../../images/selectbox_ic.png") no-repeat right center ;}
+table.brd_write2 .telerik_bx a.rfdSelect span.rfdSelectOuter span.rfdSelectText {}
+
+/* calendar ====================*/
+table.brd_write2 .telerik_bx .RadPicker {width:110px !important; height:28px !important;}
+table.brd_write2 .telerik_bx .RadPicker table.rcTable.rcSingle {}
+table.brd_write2 .telerik_bx .RadPicker table.rcTable.rcSingle > tbody td.rcInputCell .riSingle.RadInput input.riTextBox {height:28px; border:1px solid #d5d9e0;}
+table.brd_write2 .telerik_bx.telerik_date .RadAjaxPanel {width:auto !important;}
+
+/* telerik_input_button ====================*/
+/* button with text */ 
+table.brd_write2 .telerik_bx.inp_btn .RadAjaxPanel {display:block !important; box-sizing:border-box; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; -ms-box-sizing:border-box; }
+table.brd_write2 .telerik_bx.inp_btn .RadAjaxPanel .RadAutoCompleteBox {max-width:100%; min-width:100%;}
+table.brd_write2 .telerik_bx.inp_btn .RadAjaxPanel .RadAutoCompleteBox .racTokenList {width:100%; height:30px; line-height:28px; border:1px solid #d5d9e0; padding-right:36px; box-sizing:border-box; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; -ms-box-sizing:border-box; background:#FFF;}
+table.brd_write2 .telerik_bx.inp_btn .RadAjaxPanel .RadAutoCompleteBox .racTokenList input {height:30px; line-height:28px; background:#FFF;}
+table.brd_write2 .telerik_bx.inp_btn .RadAjaxPanel .RadAutoCompleteBox .racTokenList input.racInput {}
+/*  */
+table.brd_write2 .telerik_bx.inp_btn > .riSingle.RadInput {}
+table.brd_write2 .telerik_bx.inp_btn > .riSingle.RadInput input {padding-right:10px;}
+/*  */
+table.brd_write2 .telerik_bx.inp_btn .RadAjaxPanel .riSingle.RadInput {}
+table.brd_write2 .telerik_bx.inp_btn .RadAjaxPanel .riSingle.RadInput input {}
+/* submit buton */
+table.brd_write2 .telerik_bx.inp_btn .RadButton.btn_src {display:inline-block; position:absolute; right:0; top:0;}
+table.brd_write2 .telerik_bx.inp_btn .RadioButtonList .btn_src {display:inline-block; position:absolute; right:0; top:0;}
+table.brd_write2 .telerik_bx.inp_btn .RadButton.btn_src input.rbDecorated {width:36px; height:30px; background:#8c8482 url("../../images/search_ic.png") no-repeat center center; font-size:0; text-indent:-3000px;}
+table.brd_write2 .telerik_bx.inp_btn .RadButton.btn_txt {display:inline-block; position:absolute; right:0; top:0;}
+table.brd_write2 .telerik_bx.inp_btn .RadButton.btn_txt input.rbDecorated {height:30px; line-height:30px; padding:0 10px !important; font-weight:bold; color:#FFF; background:#548e51;}
+
+
+/*미결채권반제전표 수금액 - 자동분배버튼*/
+table.brd_write2 .telerik_bx2 .riSingle.RadInput {width:73% !important;}
+table.brd_write2 .telerik_bx2 .riSingle.RadInput > input {width:100%;}
+table.brd_write2 .telerik_bx2 .riSingle.RadInput input.rfdDecorated {width:100% !important; height:30px !important; padding:0 5px !important; border:1px solid #d5d9e0 !important;*height:26px !important; *padding:0 !important;}
+/* submit button */
+table.brd_write2 .telerik_bx2.inp_btn2 .RadButton.btn_src {display:inline-block; position:absolute; width:78px; right:20px; top:73px;}
+table.brd_write2 .telerik_bx2.inp_btn2 .RadButton.btn_src input.rbDecorated {width:78px; height:30px; background:#8c8482; text-align:center; font-size:1.154em; font-weight:bold; color:#FFF; }
+
+/*영업/판매 수금관리(예금수금액)*/
+table.brd_write2 .telerik_bx3 .riSingle.RadInput {width:81% !important;}
+table.brd_write2 .telerik_bx3 .riSingle.RadInput > input {width:100%;}
+table.brd_write2 .telerik_bx3 .riSingle.RadInput input.rfdDecorated {width:100% !important; height:30px !important; padding:0 5px !important; border:1px solid #d5d9e0 !important;*height:26px !important; *padding:0 !important;}
+/* submit button */
+table.brd_write2 .telerik_bx3.inp_btn2 .RadButton.btn_src {display:inline-block; position:absolute; width:78px; right:20px; top:73px;}
+table.brd_write2 .telerik_bx3.inp_btn2 .RadButton.btn_src input.rbDecorated {width:78px; height:30px; background:#8c8482; text-align:center; font-size:1.154em; font-weight:bold; color:#FFF; }
+
+
+/* table 공통 ==================================================*/
+.RadGrid.brd_list2 table.rgMasterTable > tbody tr td.col_lf {text-align:left;}
+.RadGrid.brd_list2 table.rgMasterTable > tbody tr td.col_rg {text-align:right;}
+.RadGrid.brd_list2 table.rgMasterTable > tbody tr td.col_ct {text-align:center;}
+
+.RadGrid.brd_list_sml table.rgMasterTable > tbody tr td.col_lf {text-align:left;}
+.RadGrid.brd_list_sml table.rgMasterTable > tbody tr td.col_rg {text-align:right;}
+.RadGrid.brd_list_sml table.rgMasterTable > tbody tr td.col_ct {text-align:center;}
+
+.RadGrid.brd_list_sml2 table.rgMasterTable > tbody tr td.col_lf {text-align:left;}
+.RadGrid.brd_list_sml2 table.rgMasterTable > tbody tr td.col_rg {text-align:right;}
+.RadGrid.brd_list_sml2 table.rgMasterTable > tbody tr td.col_ct {text-align:center;}
+
+/* 데이트피커 특이한 유형 */
+.telerik_date .RadAjaxPanel {display:inline-block; width:auto;}
+/* */
+.memo_size {width:100% !important;}
+/* */
+.font_sml td {font-size:11px !important; letter-spacing:-0.05em;}
+/* */
+a.down_excel {display:inline-block; min-height:20px; line-height:20px; padding:0 0 0 28px; font-weight:bold; color:#cc6600; text-decoration:underline; white-space:nowrap; background:url("/images/common/ic_excel.png") no-repeat 0 0;}
+/**/
+a.reportlist_link {display:inline-block; min-height:20px; line-height:20px; padding:0 0 0 28px; font-weight:bold; color:#cc6600; text-decoration:underline; white-space:nowrap;}
+/**/
+.inp_btn .RadAjaxPanel {border:0px solid red !important; box-sizing:border-box; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; -ms-box-sizing:border-box;}
+
+
+
+
+/* 추가 ==================================================*/
+/* 20150729 - distribution 에서 복사 */
+/* brd_tree ====================*/
+/* table */
+div.RadTreeList.brd_tree {border-bottom:1px solid #d1cfc9;}
+/* thead */
+div.RadTreeList.brd_tree div.rtlHeader {padding:14px 8px; font-size:1.154em; font-weight:bold; color:#FFF; text-align:center; vertical-align:middle; background:#6e6867;}
+div.RadTreeList.brd_tree div.rtlHeader div.rtlScroller {}
+div.RadTreeList.brd_tree div.rtlHeader div.rtlScroller table.rtlTable thead {}
+div.RadTreeList.brd_tree div.rtlHeader div.rtlScroller table.rtlTable thead tr.rtlHeader {}
+div.RadTreeList.brd_tree div.rtlHeader div.rtlScroller table.rtlTable thead tr.rtlHeader th {font-weight:bold;}
+/* tbody : scroll 미사용시 */
+div.RadTreeList.brd_tree div.rtlDataDiv  { background:#FFF;}
+div.RadTreeList.brd_tree div.rtlDataDiv table.rtlTable {}
+div.RadTreeList.brd_tree div.rtlDataDiv table.rtlTable tbody {}
+div.RadTreeList.brd_tree div.rtlDataDiv table.rtlTable tbody tr {}
+div.RadTreeList.brd_tree div.rtlDataDiv table.rtlTable tbody tr.rtlR td {background:#fafafa;}
+div.RadTreeList.brd_tree div.rtlDataDiv table.rtlTable tbody tr.rtlA td {background:#ffffff;}
+div.RadTreeList.brd_tree div.rtlDataDiv table.rtlTable tbody tr td {text-overflow:ellipsis; overflow:hidden; height:42px; padding:2px 8px; border-bottom:1px solid #e0deda; font-size:1.0em; font-weight:normal; color:#4c4c4c; text-align:left; vertical-align:middle; background:#FFF;}
+div.RadTreeList.brd_tree div.rtlDataDiv table.rtlTable tbody tr:hover td {background:#fff9e5;}
+/* 확장 축소 버튼 */
+div.RadTreeList.brd_tree div.rtlDataDiv table.rtlTable tbody tr td input.rtlCollapse {width:12px; height:12px; padding:8px; background:url("/images/theme1/snb_ic_mns.png") no-repeat center center; border:1px solid #DDD;}
+div.RadTreeList.brd_tree div.rtlDataDiv table.rtlTable tbody tr td input.rtlExpand {width:12px; height:12px; padding:8px; background:url("/images/theme1/snb_ic_pls.png") no-repeat center center; border:1px solid #DDD;}
+
+/* pop2_wrap */
+.pop2_wrap div.RadTreeList.brd_tree div.rtlHeader {padding:5px 8px; font-size:1.0em;}
+.pop2_wrap div.RadTreeList.brd_tree div.rtlDataDiv table.rtlTable tbody tr td {height:26px; padding:2px 5px;}
+
+/* pop_wrap */
+.pop_wrap div.RadTreeList.brd_tree div.rtlHeader {padding:5px 8px; font-size:1.0em;}
+.pop_wrap div.RadTreeList.brd_tree div.rtlDataDiv table.rtlTable tbody tr td {height:26px; padding:2px 5px;}
+
+/* brd_write2 ====================*/
+table.brd_write2 .RadPicker {width:110px; height:30px;}
+table.brd_write2 .RadAjaxPanel > input {width:100%;}
+table.brd_write2 .inner_bx {display:inline-block;}
+/* 바코드 */
+table.brd_write2 .barcode .RadAjaxPanel {}
+table.brd_write2 .barcode .RadAjaxPanel .RadBarcode {width:300px; height:120px; padding:15px; margin-top:5px; border:1px solid #CCC;}
+table.brd_write2 .inp_btn.barcode .RadButton.btn_txt {position:relative; margin-bottom:5px;}
+/* 업로드 */
+table.brd_write2 div.RadUpload ul.ruInputs li span.ruFileWrap.ruStyled .ruFakeInput {height:28px; padding:0 5px; }
+/**/
+table.brd_write2 .ty_bx01_lf {display:inline-block; width:80%;}
+table.brd_write2 .ty_bx01_rg {display:inline-block; width:15%;}
+
+
+/* 댓글 **************************************************/
+/* 댓글목록 */
+.reply_bx {clear:both; padding:30px; margin-top:50px; color:#666; background:#f5f6f7; *zoom:1;}
+.reply_bx:after {content:""; display:block; clear:both;}
+.reply_bx ul.reply_list {}
+/* 댓글목록 작성자 정보*/
+.reply_bx ul.reply_list .wrt_infor {display:inline-block; position:relative; margin:2px 0 0 35px;}
+.reply_bx ul.reply_list .wrt_infor dt {display:none;}
+.reply_bx ul.reply_list .wrt_infor dd {float:left; margin-right:10px; font-weight:bold; color:#1777e5;}
+.reply_bx ul.reply_list .wrt_infor dd.condi {position:absolute; left:-35px; top:-2px; margin:0;}
+.reply_bx ul.reply_list .wrt_infor dd.nick {}
+.reply_bx ul.reply_list .wrt_infor dd.ident {}
+.reply_bx ul.reply_list .wrt_infor dd.time {}
+.reply_bx ul.reply_list .wrt_infor dd.replycomment { color:#000000; font-weight:normal;}
+/* 댓글목록 수정 삭제 */
+.reply_bx .reply_modify {position:absolute; right:0; top:-1px;}
+.reply_bx .reply_modify ul {}
+.reply_bx .reply_modify li {float:left; padding:0 0 0 10px;}
+.reply_bx .reply_modify li a {color:#8d97a6;}
+/* 댓글작성 */
+.reply_wrt {margin-bottom:10px;}
+.reply_bx .reply_write dl.wrt_infor {position:relative; margin:0 0 10px; *zoom:1;}
+.reply_bx .reply_write dl.wrt_infor:after {content:""; display:block; clear:both;}
+.reply_bx .reply_write dl.wrt_infor dt {display:none;}
+.reply_bx .reply_write dl.wrt_infor dd {float:left;}
+/* 댓글작성 작성자 상태 */
+.reply_bx .reply_write .wrt_infor input.inp_name {width:102px; height:28px; margin-right:10px; border:1px solid #c7cbd1;}
+.reply_bx .reply_write dl.wrt_infor dd .condition_bx {}
+.reply_bx .reply_write dl.wrt_infor dd .condition_bx label {margin-right:2px;}
+.reply_bx .reply_write dl.wrt_infor dd .condition_bx span {position:relative; top:4px;}
+.spr_reply01 {display:inline-block; width:23px; height:19px; background:url("../../images/board/spr_reply.png") no-repeat 0 0;}
+.spr_reply02 {display:inline-block; width:23px; height:19px; background:url("../../images/board/spr_reply.png") no-repeat 0 -30px;}
+.spr_reply03 {display:inline-block; width:23px; height:19px; background:url("../../images/board/spr_reply.png") no-repeat 0 -60px;}
+.spr_reply04 {display:inline-block; width:23px; height:19px; background:url("../../images/board/spr_reply.png") no-repeat 0 -90px;}
+.spr_reply05 {display:inline-block; width:23px; height:19px; background:url("../../images/board/spr_reply.png") no-repeat 0 -120px;}
+.spr_reply06 {display:inline-block; width:23px; height:19px; background:url("../../images/board/spr_reply.png") no-repeat 0 -150px;}
+.spr_reply07 {display:inline-block; width:23px; height:19px; background:url("../../images/board/spr_reply.png") no-repeat 0 -180px;}
+.spr_reply08 {display:inline-block; width:23px; height:19px; background:url("../../images/board/spr_reply.png") no-repeat 0 -210px;}
+.spr_reply09 {display:inline-block; width:23px; height:19px; background:url("../../images/board/spr_reply.png") no-repeat 0 -240px;}
+.spr_reply10 {display:inline-block; width:23px; height:19px; background:url("../../images/board/spr_reply.png") no-repeat 0 -270px;}
+.spr_reply11 {display:inline-block; width:23px; height:19px; background:url("../../images/board/spr_reply.png") no-repeat 0 -300px;}
+.spr_reply12 {display:inline-block; width:23px; height:19px; background:url("../../images/board/spr_reply.png") no-repeat 0 -330px;}
+/* 댓글작성 내용 */
+.reply_bx .reply_write .reply_con {}
+.reply_bx .reply_write .reply_con:after {content:""; display:block; clear:both; *zoom:1;}
+#contents .reply_bx .reply_write .reply_con textarea.txtarea_reply {float:left; width:618px; height:61px; padding:5px; border:1px solid #c7cbd1;}
+#wideContents .reply_bx .reply_write .reply_con textarea.txtarea_reply {float:left; width:865px; height:61px; padding:5px; border:1px solid #c7cbd1;}
+.reply_bx .reply_write .reply_con ul.reply_btn {float:right; width:80px;}
+.reply_bx .reply_write .reply_con ul.reply_btn li {}
+.reply_bx .reply_write .reply_con ul.reply_btn li span {display:block; width:78px; height:32px; line-height:32px; text-align:center;}
+.reply_bx .reply_write .reply_con ul.reply_btn li span a {display:block; font-weight:bold;}
+.reply_bx .reply_write .reply_con ul.reply_btn .reply {margin-bottom:5px; border:1px solid #8a9099; background:#FFF;}
+.reply_bx .reply_write .reply_con ul.reply_btn .reply a {color:#000;}
+.reply_bx .reply_write .reply_con ul.reply_btn .good {border:1px solid #3e6fb3; background:url("../../images/common/spr_btn.png") no-repeat 10px -181px #4e90ed;}
+.reply_bx .reply_write .reply_con ul.reply_btn .good a {padding-left:20px; color:#FFF;}
+
+/* pop_footer selectbox (RadComboBox) */
+.pop_wrap .pop_footer .telerik_bx .RadComboBox {display:inline-block; width:auto; padding-right:5px; border:1px solid #d5d9e0; box-sizing:border-box; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; -ms-box-sizing:border-box; cursor:pointer; background:#FFF;}
+.pop_wrap .pop_footer .telerik_bx .RadComboBox table > tbody tr.rcbReadOnly {background:#FFF;}
+.pop_wrap .pop_footer .telerik_bx .RadComboBox table > tbody tr.rcbReadOnly .rcbEmptyMessage {font-style:normal; }
+.pop_wrap .pop_footer .telerik_bx .RadComboBox table > tbody tr.rcbReadOnly .rcbInputCellLeft {height:100% !important; line-height:2 !important;}
+.pop_wrap .pop_footer .telerik_bx .RadComboBox table > tbody tr.rcbReadOnly .rcbArrowCellRight {width:28px; height:28px; background:url("../../images/selectbox_ic.png") no-repeat center center;}
+.pop_wrap .pop_footer .telerik_bx .RadComboBox table > tbody tr.rcbReadOnly .rcbInputCellLeft input.rcbInput {cursor:pointer !important;}
+.pop_wrap .pop_footer .telerik_bx .RadComboBox table > tbody tr.rcbReadOnly .rcbArrowCellRight a {cursor:pointer !important;}
+
+.pop2_wrap .pop_footer .telerik_bx .RadComboBox {display:inline-block; width:auto; padding-right:5px; border:1px solid #d5d9e0; box-sizing:border-box; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; -ms-box-sizing:border-box; cursor:pointer; background:#FFF;}
+.pop2_wrap .pop_footer .telerik_bx .RadComboBox table > tbody tr.rcbReadOnly {background:#FFF;}
+.pop2_wrap .pop_footer .telerik_bx .RadComboBox table > tbody tr.rcbReadOnly .rcbEmptyMessage {font-style:normal; }
+.pop2_wrap .pop_footer .telerik_bx .RadComboBox table > tbody tr.rcbReadOnly .rcbInputCellLeft {height:100% !important; line-height:2 !important;}
+.pop2_wrap .pop_footer .telerik_bx .RadComboBox table > tbody tr.rcbReadOnly .rcbArrowCellRight {width:28px; height:28px; background:url("../../images/selectbox_ic.png") no-repeat center center;}
+.pop2_wrap .pop_footer .telerik_bx .RadComboBox table > tbody tr.rcbReadOnly .rcbInputCellLeft input.rcbInput {cursor:pointer !important;}
+.pop2_wrap .pop_footer .telerik_bx .RadComboBox table > tbody tr.rcbReadOnly .rcbArrowCellRight a {cursor:pointer !important;}
+
+.pop4_wrap .pop_footer .telerik_bx .RadComboBox {display:inline-block; width:auto; padding-right:5px; border:1px solid #d5d9e0; box-sizing:border-box; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; -ms-box-sizing:border-box; cursor:pointer; background:#FFF;}
+.pop4_wrap .pop_footer .telerik_bx .RadComboBox table > tbody tr.rcbReadOnly {background:#FFF;}
+.pop4_wrap .pop_footer .telerik_bx .RadComboBox table > tbody tr.rcbReadOnly .rcbEmptyMessage {font-style:normal; }
+.pop4_wrap .pop_footer .telerik_bx .RadComboBox table > tbody tr.rcbReadOnly .rcbInputCellLeft {height:100% !important; line-height:2 !important;}
+.pop4_wrap .pop_footer .telerik_bx .RadComboBox table > tbody tr.rcbReadOnly .rcbArrowCellRight {width:28px; height:28px; background:url("../../images/selectbox_ic.png") no-repeat center center;}
+.pop4_wrap .pop_footer .telerik_bx .RadComboBox table > tbody tr.rcbReadOnly .rcbInputCellLeft input.rcbInput {cursor:pointer !important;}
+.pop4_wrap .pop_footer .telerik_bx .RadComboBox table > tbody tr.rcbReadOnly .rcbArrowCellRight a {cursor:pointer !important;}

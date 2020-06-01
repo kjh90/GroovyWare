@@ -1,0 +1,273 @@
+.RadInput {
+	vertical-align: middle;
+}
+.RadInputMgr {
+	vertical-align: middle;
+}
+* + html .riSingle input.riTextBox {
+	height: 17px;
+}
+* + html .rfdTextbox.RadForm .riSingle input[type='text'].rfdDecorated {
+	height: 17px;
+}
+.RadInput .riTextBox {
+	height: 17px;
+}
+.RadInputMgr {
+	height: 17px;
+}
+.riSingle .riTextBox {
+	height: 1.83em;
+}
+.rfdTextbox.RadForm .riSingle input[type='text'].rfdDecorated {
+	height: 1.83em;
+}
+.RadInput textarea.riTextBox {
+	height: auto;
+}
+.RadInput table {
+	border: 0px currentColor; border-image: none; vertical-align: bottom;
+}
+.RadInput table.riTable td {
+	padding: 0px; border: 0px currentColor; border-image: none; overflow: visible; vertical-align: middle;
+}
+.RadInput table td.riCell {
+	padding-right: 4px;
+}
+.RadInput textarea {
+	overflow: auto; vertical-align: bottom; white-space: pre-wrap; resize: none;
+}
+.riResizable.RadInput .riTextBox {
+	min-height: 40px; min-width: 65px;
+}
+.riResizable.RadInput .riTextBox {
+	padding-right: 2px;
+}
+.riContButton.RadInput .riResizeIcon {
+	margin-left: -27px;
+}
+.RadInput .riResizeIcon {
+	width: 7px; height: 7px; margin-left: -7px; vertical-align: bottom; display: inline-block;
+}
+.riButtonSwap.RadInput .riResizeIcon {
+	width: 7px; height: 7px; margin-left: -7px; vertical-align: bottom; display: inline-block;
+}
+.RadInput .rfdRoundedContent {
+	width: 100% !important;
+}
+.RadInput .rfdRoundedWrapper {
+	table-layout: fixed;
+}
+html body .RadInput .riTextBox {
+	border-width: 1px; border-style: solid; padding: 2px 2px 1px; vertical-align: middle;
+}
+html body .RadInputMgr {
+	border-width: 1px; border-style: solid; padding: 2px 2px 1px; vertical-align: middle;
+}
+html body .RadInput :disabled.riTextBox {
+	opacity: 1;
+}
+html body :disabled.RadInputMgr {
+	opacity: 1;
+}
+.riSingle input.rfdDecorated {
+	
+}
+input.rfdDecorated.RadInputMgr {
+	
+}
+textarea.RadInputMgr {
+	overflow: auto;
+}
+html body .RadInput input.riEmpty {
+	font-style: italic;
+}
+html body .RadInput textarea.riEmpty {
+	font-style: italic;
+}
+html body input.RadInput_Empty {
+	font-style: italic;
+}
+.RadInput a {
+	outline: 0px; text-align: center; text-indent: -2222px; overflow: hidden; text-decoration: none; display: block; position: relative; z-index: 2;
+}
+* html .RadInput a {
+	position: static;
+}
+* + html .RadInput a {
+	position: static;
+}
+* + html .RadInput a {
+	text-align: right; text-indent: 0px;
+}
+* + html .RadInput a span {
+	text-indent: -2222px; display: inline-block;
+}
+.RadInput .riSpin a {
+	margin: 0px 1px;
+}
+.RadInput a.riDown {
+	margin-top: 3px;
+}
+.RadInput .riLabel {
+	background: none; margin: 0px 4px 0px 0px; width: 40%; white-space: nowrap;
+}
+@media not all
+{
+.rdfd_ {
+	position: absolute;
+}
+}
+* html .RadInput {
+	height: 25px; display: inline-block;
+}
+.RadInputRTL table td.riCell {
+	padding: 0px 0px 0px 4px;
+}
+.RadInputRTL .riLabel {
+	margin: 0px 0px 0px 4px;
+}
+.riStrengthBar {
+	background: url("Common/PasswordStrength.png") repeat-y; font: 12px/18px "segoe ui", arial, sans-serif; width: 100px; height: 20px; text-align: center; color: rgb(0, 0, 0); overflow: hidden; margin-left: 5px; vertical-align: middle; display: inline-block; font-size-adjust: none; font-stretch: normal;
+}
+.riStrengthBarL0 {
+	background: 0px;
+}
+.riStrengthBarL1 {
+	background-position: 0px 0px; color: rgb(98, 0, 0); background-color: rgb(255, 57, 51);
+}
+.riStrengthBarL2 {
+	background-position: -300px 0px; color: rgb(146, 43, 0); background-color: rgb(255, 120, 51);
+}
+.riStrengthBarL3 {
+	background-position: -600px 0px; color: rgb(158, 89, 0); background-color: rgb(255, 190, 51);
+}
+.riStrengthBarL4 {
+	background-position: -900px 0px; color: rgb(105, 100, 0); background-color: rgb(221, 204, 51);
+}
+.riStrengthBarL5 {
+	background-position: 100% 0px; color: rgb(35, 104, 0); background-color: rgb(107, 204, 51);
+}
+.riSingle {
+	text-align: left; display: inline-block; white-space: nowrap; box-sizing: border-box; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; -ms-box-sizing: border-box; -khtml-box-sizing: border-box;
+}
+.riLabel {
+	box-sizing: border-box; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; -ms-box-sizing: border-box; -khtml-box-sizing: border-box;
+}
+.riSingle .riTextBox {
+	box-sizing: border-box; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; -ms-box-sizing: border-box; -khtml-box-sizing: border-box;
+}
+.riSingle .riContentWrapper {
+	box-sizing: border-box; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; -ms-box-sizing: border-box; -khtml-box-sizing: border-box;
+}
+.riSingle a.riButton {
+	background-position: 3px 5px; width: 20px; height: 18px; line-height: 18px; vertical-align: middle; display: inline-block;
+}
+.riSingle a.riButton:hover {
+	background-position: 3px -45px;
+}
+.riSingle .riLabel {
+	margin: 0px; padding-right: 5px; vertical-align: middle; display: inline-block;
+}
+.riSingle a.riUp {
+	width: 15px; height: 8px; vertical-align: top; display: inline-block;
+}
+.riSingle a.riDown {
+	width: 15px; height: 8px; margin-left: -15px; vertical-align: bottom; display: inline-block;
+}
+.riSingle .riContentWrapper {
+	width: 60%; overflow: visible; vertical-align: middle; display: inline-block;
+}
+* + html .riSingle .riContentWrapper {
+	overflow: visible;
+}
+.riContButton {
+	padding-right: 22px;
+}
+.riContSpinButtons {
+	padding-right: 17px;
+}
+.riContSpinButtons.riContButton {
+	padding-right: 35px;
+}
+.riContButton .riContentWrapper {
+	padding-right: 21px;
+}
+* + html .riContButton .riContentWrapper {
+	text-align: right;
+}
+.riContSpinButtons .riContentWrapper {
+	padding-right: 17px;
+}
+.riContSpinButtons.riContButton .riContentWrapper {
+	padding-right: 35px;
+}
+html body .riSingle .riTextBox {
+	margin: 0px; width: 100%; padding-right: 5px; padding-left: 5px;
+}
+html body .riSingle [type='text'].riTextBox {
+	margin: 0px; width: 100%; padding-right: 5px; padding-left: 5px;outline:none;
+}
+.rfdTextbox.RadForm .riSingle input.rfdDecorated {
+	padding-right: 5px; padding-left: 5px;
+}
+.rfdTextbox.RadForm .riSingle input[type='text'].rfdDecorated {
+	padding-right: 5px; padding-left: 5px;
+}
+.rfdTextbox.RadForm input.RadInputMgr.rfdDecorated {
+	width: auto;
+}
+.riSingle .riButton {
+	margin-top: 2px; display: inline-block;
+}
+.riSingle .riStrengthBar {
+	margin-left: 0px;
+}
+.rcSingle .riSingle {
+	white-space: normal;
+}
+div.RadPicker table.rcSingle .rcInputCell {
+	padding-right: 0px;
+}
+.RadInputRTL {
+	text-align: right;
+}
+.riResizable.RadInputRTL .riTextBox {
+	padding-right: 5px; padding-left: 2px;
+}
+.riContButton.RadInputRTL .riResizeIcon {
+	margin-right: -27px; margin-left: 0px;
+}
+.RadInputRTL .riResizeIcon {
+	margin-right: -7px; margin-left: 0px;
+}
+.riButtonSwap.RadInputRTL .riResizeIcon {
+	margin-right: -7px; margin-left: 0px;
+}
+.RadInputRTL.riSingle a.riDown {
+	margin-right: -15px; margin-left: 0px;
+}
+._Telerik_Opera11 .RadInputRTL.riSingle a.riUp {
+	margin-right: -15px;
+}
+._Telerik_Opera11 .RadInputRTL.riSingle a.riDown {
+	margin-right: 0px;
+}
+.riContSpinButtons .RadInputRTL {
+	padding-right: 0px; padding-left: 17px;
+}
+.RadInputRTL.riContSpinButtons.riContButton {
+	padding-right: 0px; padding-left: 35px;
+}
+.RadInputRTL.riContButton .riContentWrapper {
+	padding-right: 0px; padding-left: 21px; margin-right: 0px; margin-left: -21px;
+}
+.RadInputRTL.riContSpinButtons .riContentWrapper {
+	padding-right: 0px; padding-left: 17px;
+}
+.RadInputRTL.riContSpinButtons.riContButton .riContentWrapper {
+	padding-right: 0px; padding-left: 35px;
+}
+* html body .riSingle .riTextBox {
+	margin-top: 0px;
+}

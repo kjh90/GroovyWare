@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="notice">
+	
+	<!-- 총 게시물 수 -->
+	<select id="totalCount" parameterType="java.util.Map" resultType="int">
+		select count(*) from ntcbbs_t
+		where ntc_status = '0'
+		<if test="e_code != null">
+			and e_code = #{e_code}
+		</if>
+		<if test="noticeTitle != null">
+			and ntc_title like '%'||#{noticeTitle}||'%'
+		</if>
+		<if test="writeDateStart != null and writeDateEnd != null">
+			and ntc_write_date between #{writeDateStart} and #{writeDateEnd}
+		</if>
+	</select>
+	
+	<resultMap type="mybatis.vo.NoticeVO" id="noticeMap">
+		<association property="evo" javaType="mybatis.vo.EmpVO" select="emp" column="e_code" />
+	</resultMap>
+	
+	<select id="emp" parameterType="String" resultType="mybatis.vo.EmpVO">
+		select * from emp_t
+		where e_code = #{e_code}
+	</select>
+	
+	<!-- 공지사항 리스트 및 검색 -->
+	<select id="noticeList" parameterType="java.util.Map" resultMap="noticeMap">
+		SELECT * FROM (
+			SELECT rownum as r_num, a.* FROM (
+				SELECT * FROM ntcbbs_t
+				WHERE ntc_status = '0'
+				<if test="e_code != null">
+					and e_code = #{e_code}
+				</if>
+				<if test="noticeTitle != null">
+					and ntc_title like '%'||#{noticeTitle}||'%'
+				</if>
+				<if test="writeDateStart != null and writeDateEnd != null">
+					<!-- and ntc_write_date <![CDATA[ => ]]> #{writeDateStart} and <![CDATA[ <= ]]> #{writeDateEnd} -->
+					and ntc_write_date between #{writeDateStart} and #{writeDateEnd}
+				</if>
+				ORDER BY ntc_idx DESC
+			) a
+		) WHERE r_num BETWEEN #{begin} AND #{end}
+		<!-- select * from ntcbbs_t
+		where ntc_status = '0'
+		<if test="e_code != null">
+			and e_code = #{e_code}
+		</if>
+		<if test="noticeTitle != null">
+			and ntc_title like '%'||#{noticeTitle}||'%'
+		</if>
+		<if test="writeDateStart != null and writeDateEnd != null">
+			and ntc_write_date <![CDATA[ => ]]> #{writeDateStart} and <![CDATA[ <= ]]> #{writeDateEnd}
+			and ntc_write_date between #{writeDateStart} and #{writeDateEnd}
+		</if> -->
+	</select>
+	
+	<!-- 공지사항 조회수 -->
+	<update id="noticeHit" parameterType="String">
+		update ntcbbs_t
+		set ntc_hit = ntc_hit+1
+		where ntc_idx = #{ntc_idx}
+	</update>
+	
+	<!-- 공지사항 등록 -->
+	<insert id="noticeInsert" parameterType="mybatis.vo.NoticeVO">
+		insert into ntcbbs_t(ntc_idx,ntc_title,e_code,ntc_content,ntc_file_name,ntc_ori_name,ntc_write_date,ntc_hit,ntc_status,ip)
+		values(ntc_seq.NEXTVAL,#{ntc_title},#{e_code},#{ntc_content},#{ntc_file_name},#{ntc_ori_name},#{ntc_write_date},0,'0',#{ip})
+	</insert>
+	
+	<!-- 공지사항 삭제 -->
+	<update id="noticeCheckDel" parameterType="String">
+		update ntcbbs_t
+		set ntc_status = '1'
+		where ntc_idx = #{ntc_idx}
+	</update>
+	
+	<!-- 공지사항 View Ajax e_code-->
+	<select id="noticeEmpView" parameterType="String" resultType="mybatis.vo.EmpVO">
+		select * from emp_t
+		where e_code = #{e_code}
+	</select>
+	
+	<!-- 원글에대한 댓글 map -->
+	<resultMap type="mybatis.vo.NoticeVO" id="mapCmt">
+		<id property="ntc_idx" column="ntc_idx" />
+		<collection property="comment_list" ofType="mybatis.vo.CommentVO" select="cmtList" column="ntc_idx" />
+	</resultMap>
+	
+	<!-- 공지사항 view Ajax ntc_idx-->
+	<select id="noticeBbsView" parameterType="String" resultMap="mapCmt">
+		select * from ntcbbs_t
+		where ntc_idx = #{ntc_idx}
+	</select>
+	
+	<!-- 원글의 idx에 따른 댓글리스트 선별 -->
+	<select id="cmtList" parameterType="String" resultType="mybatis.vo.CommentVO">
+		select * from notice_comment_t
+		where ntc_idx = #{ntc_idx} and ntc_comm_status = '0'
+		order by ntc_comm_idx ASC
+		
+	</select>
+	
+	<!-- 공지사항 view Ajax ntc_idx-->
+	<!-- <select id="noticeBbsView" parameterType="String" resultType="mybatis.vo.NoticeVO">
+		select * from ntcbbs_t
+		where ntc_idx = #{ntc_idx}
+	</select> -->
+	
+	<!-- 공지사항 수정 -->
+	<update id="noticeUpdate" parameterType="mybatis.vo.NoticeVO">
+		update ntcbbs_t
+		set ntc_title = #{ntc_title},
+		ntc_content = #{ntc_content}
+		<if test="ntc_file_name != ''">
+			,ntc_file_name = #{ntc_file_name}
+		</if>
+		where ntc_idx = #{ntc_idx}
+	</update>
+	
+	<!-- 공지사항 댓글 등록 -->
+	<insert id="noticeCmtInsert" parameterType="java.util.Map">
+		insert into notice_comment_t(ntc_comm_idx,e_code,ntc_comm_content,ntc_comm_write_date,ntc_comm_status,ntc_idx,ip,e_name)
+		values(ntc_comm_seq.NEXTVAL,#{e_code},#{ntc_comm_content},#{ntc_comm_write_date},'0',#{ntc_idx},#{ip},#{e_name})
+	</insert>
+	
+	<!-- 공지사항 댓글 삭제 -->
+	<update id="cmtDel" parameterType="String">
+		update notice_comment_t
+		set ntc_comm_status = '1'
+		where ntc_comm_idx = #{ntc_comm_idx}
+	</update>
+	
+	<!-- 공지사항 댓글 수정 -->
+	<update id="cmtUpdate" parameterType="java.util.Map">
+		update notice_comment_t
+		set ntc_comm_content = #{ntc_comm_content}
+		where ntc_comm_idx = #{ntc_comm_idx}
+	</update> 
+	
+	<!-- 공지사항 댓글수정을위해 가져오는 하나의 CommentVO -->
+	<select id="cmtCvo" parameterType="String" resultType="mybatis.vo.CommentVO">
+		select * from notice_comment_t
+		where ntc_comm_idx = #{ntc_comm_idx}
+	</select>
+	
+	<!-- 댓글 총개수 -->
+	<select id="cmtCount" parameterType="String" resultType="int">
+		select count(*) from notice_comment_t
+		where ntc_comm_status = '0' and ntc_idx = #{ntc_idx}
+	</select>
+	
+	<!-- 사원검색 자동완성 -->
+	<select id="empAutoComplete" parameterType="String" resultType="mybatis.vo.EmpVO">
+		select * from emp_t
+		where e_name like '%'||#{e_name}||'%'
+	</select>
+	
+</mapper>
+
+
+
+
+

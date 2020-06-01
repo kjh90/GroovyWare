@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="emp">
+	
+	<resultMap type="mybatis.vo.EmpVO" id="empMap">
+		<association property="dvo" javaType="mybatis.vo.DeptVO" select="dept" column="dept_code" />
+		<association property="pvo" javaType="mybatis.vo.PositionVO" select="position" column="pos_code" />
+		<association property="dutyvo" javaType="mybatis.vo.DutyVO" select="duty" column="duty_code" />
+	</resultMap>
+	
+	<select id="dept" parameterType="String" resultType="mybatis.vo.DeptVO">
+		select * from dept_t
+		where dept_code = #{dept_code}
+	</select>
+	
+	<select id="position" parameterType="String" resultType="mybatis.vo.PositionVO">
+		select * from position_t
+		where pos_code = #{pos_code}
+	</select>
+	
+	<select id="duty" parameterType="String" resultType="mybatis.vo.DutyVO">
+		select * from duty_t
+		where duty_code = #{duty_code}
+	</select>
+	
+	<!-- 사원리스트,검색 -->
+	<select id="empList" parameterType="java.util.Map" resultMap="empMap">
+		select * from emp_t
+		where e_use = '사용'
+		<if test="empSearch != null">
+			and e_name like '%'||#{empSearch}||'%'
+		</if>
+	</select>
+	
+	<!-- 사원등록 -->
+	<insert id="empInsert" parameterType="mybatis.vo.EmpVO">
+		insert into emp_t(e_code,pos_code,duty_code,dept_code,e_name,e_phone,e_cellphone,e_email,
+		e_addr,s_num,hire_date,con_year,sal_type,marry_status,school_name,major,
+		bank_name,account,acc_name,resign_date,resign_reason,identity_file,attached_file,
+		e_post,e_id,e_pw,per_level,e_use)
+		values(upper(#{e_code}),#{pos_code},#{duty_code},#{dept_code},#{e_name},#{e_phone},#{e_cellphone},#{e_email},
+		#{e_addr},#{s_num},#{hire_date},sysdate,#{sal_type},#{marry_status},#{school_name},#{major},
+		#{bank_name},#{account},#{acc_name},#{resign_date},#{resign_reason},#{identity_file},#{attached_file},
+		#{e_post},'id','1111','일반','사용')
+	</insert>
+	
+	<!-- 사원수정 -->
+	<!-- <update id="empUpdate" parameterType="mybatis.vo.EmpVO">
+		update emp_t
+		set pos_code = #{pos_code},
+		duty_code = #{duty_code},
+		dept_code = #{dept_code},
+		e_name = #{e_name},
+		e_phone = #{e_phone},
+		e_cellphone = #{e_cellphone},
+		e_email = #{e_email},
+		e_addr = #{e_addr},
+		s_num = #{s_num},
+		hire_date = #{hire_date},
+		sal_type = #{sal_type},
+		marry_status = #{marry_status},
+		school_name = #{school_name},
+		bank_name = #{bank_name},
+		account = #{account},
+		acc_name = #{acc_name},
+		resign_date = #{resign_date},
+		resign_reason = #{resign_reason},
+		identity_file = #{identity_file},
+		attached_file = #{attached_file},
+		e_post = #{e_post}
+		where e_code = #{e_code}
+			
+	</update> -->
+	
+	<!-- 사원의 View Ajax -->
+	<select id="empViewAjax" parameterType="String" resultType="mybatis.vo.EmpVO">
+		select * from emp_t
+		where e_code = #{e_code}
+	</select>
+	
+	<!-- 사원 체크선택 삭제 -->
+	<update id="empCheckDel" parameterType="String">
+		update emp_t
+		set e_use = '미사용'
+		where e_code = #{e_code}
+	</update>
+	
+	<!-- 사원번호 중복여부 -->
+	<select id="checkEmpCode" parameterType="String" resultType="mybatis.vo.EmpVO">
+		select * from emp_t
+		where e_code = upper(#{e_code})
+	</select>
+	
+	<!-- 부서검색 -->
+	<select id="selectDept" parameterType="java.util.Map" resultType="mybatis.vo.DeptVO">
+		select * from dept_t
+		where dept_use = '사용'
+		<if test="deptSearch != null">
+			and dept_name like '%'||#{deptSearch}||'%'
+		</if>
+	</select>
+	
+	<!-- 부서등록 -->
+	<insert id="deptInsert" parameterType="mybatis.vo.DeptVO">
+		insert into dept_t(dept_code,dept_name,dept_use)
+		values(upper(#{dept_code}),#{dept_name},'사용')
+	</insert>
+	
+	<!-- 부서코드 중복여부 -->
+	<select id="checkDeptCode" parameterType="String" resultType="mybatis.vo.DeptVO">
+		select * from dept_t
+		where dept_code = #{dept_code}
+	</select>
+	
+	<!-- 부서 삭제 -->
+	<update id="deptDel" parameterType="String">
+		update dept_t
+		set dept_use = '미사용'
+		where dept_code = #{dept_code}
+	</update>
+	
+	<!-- 부서 검색 -->
+	<select id="deptSearch" parameterType="String" resultType="mybatis.vo.DeptVO">
+		select * from dept_t
+		where dept_code like '%'||#{keyword}||'%' OR dept_name like '%'||#{keyword}||'%'
+	</select>
+	
+	<!-- 직급코드 리스트 -->
+	<select id="posList" parameterType="java.util.Map" resultType="mybatis.vo.PositionVO">
+		select * from position_t
+		where pos_use = '사용'
+		<if test="posSearch != null">
+			and pos_name like '%'||#{posSearch}||'%'
+		</if>
+	</select>
+	
+	<!-- 직급등록 -->
+	<insert id="posInsert" parameterType="mybatis.vo.PositionVO">
+		insert into position_t(pos_code,pos_name,pos_rank,pos_use)
+		values(upper(#{pos_code}),#{pos_name},#{pos_rank},'사용')
+	</insert>
+	
+	<!-- 직급코드 중복여부 -->
+	<select id="checkPosCode" parameterType="String" resultType="mybatis.vo.PositionVO">
+		select * from position_t
+		where pos_code = #{pos_code}
+	</select>
+	
+	<!-- 직급수정 -->
+	<!-- <update id="posUpdate" parameterType="mybatis.vo.PositionVO">
+		update position_t
+		set pos_name = #{pos_name}
+		pos_rank = #{pos_rank}
+		where pos_code = #{pos_code}
+	</update> -->
+	
+	<!-- 직급삭제 -->
+	<!-- <update id="posDel" parameterType="String">
+		update position_t
+		set pos_use = '미사용'
+		where pos_code = #{pos_code}
+	</update> -->
+	
+	<!-- 직급 체크선택 삭제 -->
+	<update id="checkDel" parameterType="String">
+		update position_t
+		set pos_use = '미사용'
+		where pos_code = #{pos_code}
+	</update>
+	
+	<!-- 직급 수정 -->
+	<update id="posUpdate" parameterType="mybatis.vo.PositionVO">
+		update position_t
+		set pos_name = #{pos_name},
+		pos_rank = #{pos_rank}
+		where pos_code = #{pos_code}
+	</update>
+	
+	
+	<!-- 직책코드 리스트 -->
+	<select id="dutyList" parameterType="java.util.Map" resultType="mybatis.vo.DutyVO">
+		select * from duty_t
+		where duty_use = '사용'
+		<if test="dutySearch != null">
+			and duty_name like '%'||#{dutySearch}||'%'
+		</if>
+	</select>
+	
+	<!-- 직책등록 -->
+	<insert id="dutyInsert" parameterType="mybatis.vo.DutyVO">
+		insert into duty_t(duty_code,duty_name,duty_rank,duty_use)
+		values(upper(#{duty_code}),#{duty_name},#{duty_rank},'사용')
+	</insert>
+	
+	<!-- 직책코드 중복여부 -->
+	<select id="checkDutyCode" parameterType="String" resultType="mybatis.vo.DutyVO">
+		select * from duty_t
+		where duty_code = #{duty_code}
+	</select>
+	
+	<!-- 직책 체크선택 삭제 -->
+	<update id="checkDutyDel" parameterType="String">
+		update duty_t
+		set duty_use = '미사용'
+		where duty_code = #{duty_code}
+	</update>
+	
+	<!-- 직책 수정 -->
+	<update id="dutyUpdate" parameterType="mybatis.vo.DutyVO">
+		update duty_t
+		set duty_name = #{duty_name},
+		duty_rank = #{duty_rank}
+		where duty_code = #{duty_code}
+	</update>
+	
+	
+	<!-- 부서,직급,직책의 select ajax -->
+	<select id="deptSelectAjax" parameterType="String" resultType="mybatis.vo.DeptVO">
+		select * from dept_t
+		where dept_code = #{dept_code}
+	</select>
+	
+	<select id="posSelectAjax" parameterType="String" resultType="mybatis.vo.PositionVO">
+		select * from position_t
+		where pos_code = #{pos_code}
+	</select>
+	
+	<select id="dutySelectAjax" parameterType="String" resultType="mybatis.vo.DutyVO">
+		select * from duty_t
+		where duty_code = #{duty_code}
+	</select>
+	<!-- //부서,직급,직책의 select ajax -->
+	
+	<!-- 사용자설정 mapper -->	
+	<resultMap type="mybatis.vo.EmpVO" id="map1">
+	<association property="dvo" select="getDept" column="dept_code" javaType="mybatis.vo.DeptVO"/>		
+	</resultMap>	
+	
+	<!-- 사용자 설정 리스트 -->
+	 <select id="userList" resultType="mybatis.vo.EmpVO" >
+		select * from emp_t
+	</select>
+	
+	<!-- 권한등록 페이지에서 쓰일 부서명 -->
+	<select id="userSetList" resultMap="map1" parameterType="java.util.Map">
+		SELECT * FROM emp_t
+		<if test="userSearch != null">
+			WHERE e_name like '%' ||  #{userSearch} || '%'
+		</if>
+	</select>
+	
+	<select id="getDept" resultType="mybatis.vo.DeptVO" parameterType="String">
+		select * from dept_t
+		where dept_code =#{dept_code}
+	</select>
+	
+	<!-- 권한변경 -->
+	<update id="update_level" parameterType="mybatis.vo.EmpVO">
+		update emp_t
+		set per_level =#{per_level}
+		where e_code =#{e_code}	
+	</update>
+	
+	<!-- 페이징 기법에 사용될 전체게시물의 수를  반환하는 기능 -->
+	<select id="totalCount" resultType="int" parameterType="String">
+		SELECT COUNT(*) FROM emp_t	
+	</select>
+	
+	<!-- 페이징 기법을 위한 목록을 반환하는 기능 -->
+	<select id="list" resultMap="map1" parameterType="java.util.Map">
+		SELECT * FROM (
+			SELECT rownum r, a.* FROM (
+				SELECT * FROM emp_t
+				ORDER BY e_code DESC
+                
+			) a
+		) where r  BETWEEN #{begin} AND #{end}	
+	</select>
+</mapper>

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="draft">
+	
+	<resultMap type="mybatis.vo.ApprovalVO" id="approvalMap">
+		<association property="evo" javaType="mybatis.vo.EmpVO" select="empName" column="e_code" />
+	</resultMap>
+	
+	<select id="empName" parameterType="String" resultType="mybatis.vo.EmpVO">
+		select * from emp_t
+		where e_code = #{e_code}
+	</select>
+	
+	<resultMap type="mybatis.vo.DraftVO" id="draftMap">
+		<association property="evo" javaType="mybatis.vo.EmpVO" select="emp" column="e_code" />
+		<association property="avo" javaType="mybatis.vo.ApprovalVO" select="approval" column="draft_code" />
+	</resultMap>
+	
+	<select id="emp" parameterType="String" resultType="mybatis.vo.EmpVO">
+		select * from emp_t
+		where e_code = #{e_code}
+	</select>
+	
+	<select id="approval" parameterType="String" resultMap="approvalMap">
+		select * from approval_t
+		where draft_code = #{draft_code}
+	</select>
+	
+	<!-- 기안view -->
+	<select id="draftGet" parameterType="String" resultMap="draftMap">
+		select * from drafting_paper_t
+		where draft_code = upper(#{draft_code})
+	</select>
+	
+	<resultMap type="mybatis.vo.DraftVO" id="draftMap2">
+		<association property="evo" javaType="mybatis.vo.EmpVO" select="emp2" column="e_code" />
+		<association property="avo" javaType="mybatis.vo.ApprovalVO" select="app" column="draft_code" />
+	</resultMap>
+	
+	<select id="emp2" parameterType="String" resultType="mybatis.vo.EmpVO">
+		select * from emp_t
+		where e_code = #{e_code}
+	</select>
+	
+	<select id="app" parameterType="String" resultType="mybatis.vo.ApprovalVO">
+		select * from approval_t
+		where draft_code = #{draft_code}
+	</select>
+	
+	<!-- 기안리스트 및 검색시 리스트 -->
+	<select id="draftList" parameterType="java.util.Map" resultMap="draftMap2">
+		select * from drafting_paper_t
+		where draft_status = '0'
+		<if test="draftSearch != null">
+			and draft_title like '%'||#{draftSearch}||'%'
+		</if>
+		<if test="draft_write_year != null">
+			and draft_year <![CDATA[ <= ]]> #{draft_write_year}
+		</if>
+	</select>
+	
+	<!-- 기안등록 -->
+	<insert id="draftWrite" parameterType="mybatis.vo.DraftVO">
+		insert into drafting_paper_t(draft_code,e_code,draft_year,draft_title,draft_content,draft_file_name,draft_ori_name,draft_status)
+		values( 'DC' || TO_CHAR(draft_seq.NEXTVAL),#{e_code},sysdate,#{draft_title},#{draft_content},#{draft_file_name},#{draft_ori_name},'0')
+	</insert>
+	
+	<!-- 기안작성자 e_code를 가져와 쓴글의 문서번호(draft_code)를 가져온다. -->
+	<select id="getDraftCode" parameterType="String" resultType="mybatis.vo.DraftVO">
+		select * from drafting_paper_t where draft_code = 
+		(select draft_code from (select * from drafting_paper_t order by draft_year desc) where e_code = 
+		#{e_code} and rownum = 1 )
+	</select>
+	
+	<!-- 반려된 문서 결재요청 -->	
+	<update id="draftResend" parameterType="mybatis.vo.DraftVO">
+		update drafting_paper_t
+		set draft_content = #{draft_content}
+		<if test="draft_file_name != ''">
+			,draft_file_name = #{draft_file_name}
+		</if>
+		<if test="draft_ori_name != ''">
+			,draft_ori_name = #{draft_ori_name}
+		</if>
+		where draft_code = #{draft_code}
+	</update>
+	
+	<!-- 반려되 문서 수정후 상태변경 -->
+	<update id="resendApproval" parameterType="String">
+		update approval_t
+		set approval_kinds = '0'
+		where draft_code = #{draft_code}
+	</update>
+	
+	<!-- 기안 체크선택 삭제 -->
+	<update id="draftCheckDel" parameterType="String">
+		update drafting_paper_t
+		set draft_status = '1'
+		where draft_code = #{draft_code}
+	</update>
+	
+	<!-- 기안삭제시 결재도삭제 -->
+	<update id="approvalCheckDel" parameterType="String">
+		update approval_t
+		set approval_kinds = '3'
+		where draft_code = #{draft_code}
+	</update>
+	
+</mapper>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.1.xsd">
+	
+	<!-- Root Context: defines shared resources visible to all other web components -->
+	<context:annotation-config/>
+ 
+ 	<context:property-placeholder location="classpath:jdbc.properties"/>
+
+ 	<bean id="ds" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+		<property name="driverClassName" value="${jdbc.driver}"/>
+		<property name="url" value="${jdbc.url}"/>
+		<property name="username" value="${jdbc.user}"/>
+		<property name="password" value="${jdbc.pwd}"/>
+	</bean>
+
+ 	<bean id="factory" class="org.mybatis.spring.SqlSessionFactoryBean">
+ 		<property name="dataSource" ref="ds" />
+ 		<property name="mapperLocations" value="classpath*:mybatis/mapper/*.xml" />
+ 	</bean> <!-- FactoryService같은 객체 -->
+ 	
+ 	<bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
+  		<constructor-arg index="0" ref="factory" />
+	</bean><!-- sqlSession과 같은 객체 -->
+	
+	<bean id="c_dao" class="mybatis.dao.CommuteDAO" /> 
+	<bean id="pc_dao" class="mybatis.dao.PersonCommDAO" />
+	<bean id="w_dao" class="mybatis.dao.WorktimeDAO" /> 
+	<bean id="e_dao" class="mybatis.dao.EmpDAO" /> 
+	<bean id="m_dao" class="mybatis.dao.MemDAO"/>
+	<bean id="a_dao" class="mybatis.dao.ApprovalDAO"/>
+	<bean id="draft_dao" class="mybatis.dao.DraftDAO"/>
+	<bean id="d_dao" class="mybatis.dao.DeptDAO"/>
+	<bean id="duty_dao" class="mybatis.dao.DutyDAO"/>	
+	<bean id="p_dao" class="mybatis.dao.PositionDAO"/>
+	<bean id="main_dao" class="mybatis.dao.MainDAO"/>
+	<bean id="n_dao" class="mybatis.dao.NoticeDAO"/>
+	<bean id="s_dao" class="mybatis.dao.ScheduleDAO"/>
+</beans>

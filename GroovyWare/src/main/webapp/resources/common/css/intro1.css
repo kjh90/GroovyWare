@@ -1,0 +1,410 @@
+@charset "utf-8";
+
+.tab{position:relative;}
+.tab ul{overflow:hidden}
+.tab ul li{float:left;width: 210px;}
+.tab ul li.on{}
+.tab ul li a.tab_style{display: block;padding:10px 20px;background: #1ec545;color:#fff;font-size:24px;font-weight:bold;}
+.tab ul li.on a.tab_style{color:#1ec545;background: #fff;}
+
+.tab_cont{display:none;}
+.tab_cont.on{display:block;}
+
+#wrapLogin {
+	min-height: 100%;
+	font-size: 1.154em;
+	overflow: hidden;
+	text-align: center;
+}
+
+#wrapLogin #header .logo a {
+	color: #1ec545;
+	font-size: 32px;
+	font-weight: bold;
+}
+
+.chk_area{
+	display: inline-block !important;
+    width: 35px;
+    height: 43px !important;
+}
+
+.chk_sucess{
+	background-image: url("../../images/check.png");
+}
+.chk_fail{
+	background-image: url("../../images/x.PNG");
+}
+
+/*background 사진*/
+.login_back1 {
+	/* background: url("../../images/login_bg_new.jpg") no-repeat center 0 #FFF; */
+}
+
+.login_back2 {
+	/* background: url("../../images/login_bg_new1.jpg") no-repeat center 0
+		#FFF; */
+}
+
+#wrapLogin #header {
+	clear: both;
+	position: relative;
+	padding: 100px 0 0;
+	margin: 0 auto;
+}
+
+#wrapLogin #header h1.logo {
+	text-align: center;
+}
+
+#wrapLogin .homepage_link {
+	position: absolute;
+	top: 20px;
+	right: 27px;
+	z-index: 100;
+}
+
+#wrapLogin #contents {
+	clear: both;
+	position: relative;
+	height: 100%;
+}
+/* form ==========*/
+.login_form {
+	clear: both;
+	padding-top: 50px;
+}
+
+.login_form .login_bx {
+	position: relative;
+	width: 420px;
+	margin: 0 auto;
+	background: #FFF;
+}
+
+.login_from .RadTabStripTop_Telerik {
+	margin: 0 !important;
+	padding: 0 !important;
+}
+
+.login_from .rtsLevel, .rtsLevel1 {
+	margin: 0 !important;
+	padding: 0 !important;
+}
+
+.login_from .rtsUL {
+	margin: 0 !important;
+	padding: 0 !important;
+}
+
+.login_from .rtsLI {
+	margin: 0 !important;
+	padding: 0 !important;
+}
+
+.login_from .rtsLink {
+	margin: 0 !important;
+	padding: 0 !important;
+}
+
+.login_from .rtsOut {
+	margin: 0 !important;
+	padding: 0 !important;
+}
+
+.login_from .rtsIn {
+	margin: 0 !important;
+	padding: 0 !important;
+}
+
+.login_from .rtsTxt {
+	margin: 0 !important;
+	padding: 0 !important;
+}
+
+.login_form .login_bx .tab1 {
+	float: left;
+	text-align: center;
+	width: 210px;
+	background-color: #ebeef2;
+	margin: 0 !important;
+	padding: 0 !important;
+}
+
+.login_form .login_bx .tab1_on {
+	float: left;
+	text-align: center;
+	width: 210px;
+	background-color: #FFF;
+	margin: 0 !important;
+	padding: 0 !important;
+}
+
+.login_form .login_bx .tab2 {
+	float: right;
+	text-align: center;
+	width: 210px;
+	background-color: #ebeef2;
+	margin: 0 !important;
+	padding: 0 !important;
+}
+
+.login_form .login_bx .tab2_on {
+	float: right;
+	text-align: center;
+	width: 210px;
+	background-color: #ebeef2;
+	margin: 0 !important;
+	padding: 0 !important;
+}
+
+.login_form .login_bx .txt {
+	clear: both;
+	text-align: center;
+	font-size: 18px;
+	font-weight: bold;
+	color: #333;
+	padding: 27px 0;
+}
+
+.login_form .login_bx .img {
+	clear: both;
+	text-align: center;
+}
+
+.login_form .login_bx dl {
+	width: 320px;
+	padding-top: 30px;
+	text-align: center;
+	margin: 0 auto;
+}
+
+.login_form .login_bx dl dt {
+	display: none;
+}
+
+.login_form .login_bx dl dd {
+	position:relative;
+	margin-bottom: 5px;
+	text-align: center;
+	width: 320px;
+	height: 45px;
+}
+
+.login_form .login_bx dl dd.ico1 {
+	background: url('../../images/login_input_ico1.gif') no-repeat left top;
+	margin-left: 0px;
+	margin-bottom: 5px;
+}
+
+.login_form .login_bx dl dd.ico2 {
+	background: url('../../images/login_input_ico2.gif') no-repeat left top;
+	margin-left: 0px;
+}
+
+.login_form .login_bx dl dd.ico3 {
+	background: url('../../images/login_input_ico3.gif') no-repeat left top;
+	margin-left: 0px;
+}
+.login_form .login_bx dl dd.ico4 {
+	background: url('../../images/login_input_ico3.gif') no-repeat left top;
+	margin-left: 0px;
+}
+
+.login_form .login_bx dl dd span {
+	display: block;
+	height: 137px;
+}
+
+.login_form .login_bx dl dd span.chk_area{
+	position:absolute;
+	right:0;
+}
+
+.login_form .login_bx dl dd input {
+	width: 280px !important;
+	height: 34px !important;
+	border: 0;
+	background: #f0f2f5;
+	margin: 5px 0 0 35px !important;
+}
+
+.login_form .login_bx .login_btn {
+	width: 320px;
+}
+
+.login_form .login_bx .login_btn .btn_log {
+    bottom: 0;
+    width: 320px;
+    height: 50px;
+    margin-bottom: 30px;
+    margin-top: 10px;
+    margin-left: 30px;
+}
+
+.login_form .login_bx .login_btn .btn_log input {
+	width: 320px;
+	height: 50px;
+	border: 0;
+	font-size: 18px;
+	font-weight: bold;
+	color: #FFF;
+	cursor: pointer;
+	background: #1ec545;
+}
+
+
+
+.login_form .login_bx .id_chk {
+	clear: both;
+	margin: 20px auto;
+	color: #dddddd;
+	font-size: 1.0em;
+	width: 320px;
+	float: right;
+}
+
+.login_form .login_bx .id_chk input {
+	margin: 1px 10px 0 0;
+	cursor: pointer;
+}
+
+.login_form .login_bx .id_chk label {
+	cursor: pointer;
+	font-size: 15px;
+	color: #4c4c4c;
+}
+
+.login_form .login_bx .id_chk label input[type='checkbox'] {
+	border: 1px solid #dde0e5 !important;
+}
+
+.login_form .login_msg{font-size: 12px;color:#ff1616;}
+
+/* 비밀번호 찾기 */
+#findContents {
+    width: 940px;
+    padding: 40px 0 123px;
+    margin: 0 auto;
+}
+#findContents .find_inp_form .frm {
+    margin-left: 240px;
+}
+#findContents .tit_bdy_01 {
+	margin: 5px 0 15px;
+	font-size: 34px;
+	font-weight: bold;
+	color: #222;
+}
+
+#findContents .bdr_box1 {
+	padding: 30px 30px 20px 30px;
+	border: 1px solid #d5d9e0;
+}
+
+#findContents .find_inp_form .frm {
+	margin-left: 240px;
+	width: 638px;
+	height: 76px;
+}
+#findContents .find_inp_form .btm_btn li {
+    display: inline-block;
+}
+#findContents .find_inp_form dl dd span.riSingle {
+    width: 160px;
+}
+#findContents .find_inp_form dl dd span.riSingle input {
+    width: 100%;
+    
+}
+
+#findContents .find_inp_form .frm dt {
+	clear: both;
+	float: left;
+	width: 60px;
+	height: 28px;
+	line-height: 28px;
+	padding-right: 10px;
+	font-weight: bold;
+	color: #000;
+}
+#findContents .find_inp_form .frm dd {
+    float: left;
+    width: 250px;
+    height: 28px;
+    margin-bottom: 10px;
+}
+#findContents .find_inp_form dl dd span.riSingle {
+    width: 100% !important;
+}
+#findContents .find_inp_form .btm_btn {
+    margin: 30px 0 50px;
+    text-align: center;
+}
+#findContents .find_inp_form .btm_btn li span {
+    display: block;
+}
+#findContents .find_inp_form .btm_btn li .confirm span.RadButton input.rbDecorated {
+    height: 34px;
+    line-height: 33px;
+    padding: 0 20px;
+    border: 1px solid #222;
+    font-size: 15px;
+    font-weight: bold;
+    color: #FFF;
+    background: #45484d;
+    cursor: pointer;
+}
+#findContents .find_inp_form .btm_btn li span {
+    display: block;
+}
+#findContents .find_inp_form .btm_btn li .cancle span.RadButton input.rbDecorated {
+    height: 34px;
+    line-height: 33px;
+    padding: 0 20px;
+    border: 1px solid #222;
+    font-size: 15px;
+    font-weight: bold;
+    color: #333;
+    background: #FFF;
+    cursor: pointer;
+}
+.login_form .login_bx .id_chk span.RadButton {
+	height: auto;
+	padding: 0;
+	margin: 2px 0 0 100px;
+}
+
+.login_form .login_bx .id_chk span.RadButton input.rbDecorated {
+	height: auto;
+	padding: 0;
+	margin: 0;
+	font-family: "Nanum Gothic";
+	font-size: 15px !important;
+	color: #66a6ff;
+}
+
+/* 공지_브라우저 */
+.notice_login {
+	clear: both;
+	padding: 30px 0 0;
+	text-align: center;
+	color: #FFF;
+	font-weight: bold;
+	line-height: 32px;
+}
+
+.notice_login img {
+	vertical-align: middle;
+}
+
+.notice_login a img {
+	margin-left: 30px;
+}
+
+/*footer*/
+p.copyright {
+	font-size: 11px;
+	font-weight: bold;
+	color: #FFF;
+}

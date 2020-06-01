@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="personComm">
+
+ 
+<resultMap id="personMap" type="mybatis.vo.PersonCommVO">
+
+<id column="person_comm_idx" property="person_comm_idx"/>
+
+<association column="worktime_code" property="wvo" select="getWorktime"  javaType="mybatis.vo.WorktimeVO"/>
+
+<association column="e_code" property="evo" select="getEmp" javaType="mybatis.vo.EmpVO"/>
+
+</resultMap>
+
+<resultMap id="onePersonMap" type="mybatis.vo.PersonCommVO">
+<association column="worktime_code" property="wvo" select="getWorktime"  javaType="mybatis.vo.WorktimeVO"/>
+<association column="e_code" property="evo" select="getEmp" javaType="mybatis.vo.EmpVO"/>
+</resultMap>
+
+<!-- 전체 개인별 출퇴근 정보를 선별하는 요소 -->
+<select id="getPersonComm" resultMap="personMap"> select * from person_comm_t WHERE person_comm_use = '0'</select>
+
+<select id="getWorktime" resultType="mybatis.vo.WorktimeVO" parameterType="String"> SELECT * FROM worktime_t WHERE worktime_code = #{worktime_code} </select>
+
+<select id="getEmp" resultType="mybatis.vo.EmpVO" parameterType="String"> SELECT * FROM emp_t WHERE e_code = #{e_code} </select>	
+
+<!-- 개인별 출퇴근 시간설정 등록 -->
+<insert id="addPersonComm" parameterType="java.util.Map">
+	INSERT INTO person_comm_t(person_comm_idx,e_code,worktime_code,ip_control,ip_addr,person_comm_use)
+	VALUES (person_comm_seq.NEXTVAL,#{e_code},#{worktime_code},#{ip_control},#{ip_addr},'0')
+</insert>
+
+<update id="editPersonComm" parameterType="java.util.Map">
+	UPDATE person_comm_t SET ip_control = #{ip_control} ,ip_addr = #{ip_addr} 
+	WHERE person_comm_idx = #{person_comm_idx}
+</update>
+
+<update id="delPersonComm" parameterType="String">
+	UPDATE person_comm_t SET person_comm_use = '1'
+	WHERE person_comm_idx = #{person_comm_idx}
+</update>
+
+<select id="getOne" resultMap="onePersonMap" parameterType="String">
+	SELECT * FROM person_comm_t WHERE e_code = #{e_code} AND person_comm_use = '0'
+</select>
+
+</mapper>
+
+
+
+
+
